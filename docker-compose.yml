@@ -1,5 +1,6 @@
 version: '3.8'
 
+
 services:
   app:
     build: ./app
@@ -10,20 +11,32 @@ services:
       - 3399:8000
     env_file:
       - ./.env.dev
+    depends_on:
+      - db
+    restart: always
+
   db:
-    image: postgres:16.4
+    build: ./db
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=hello_django
       - POSTGRES_PASSWORD=hello_django
       - POSTGRES_DB=hello_django_dev
+    restart: always
+
   serv:
     build: ./nginx
     ports:
       - 3001:80
     depends_on:
       - app
+    restart: always
+
+  logs:
+    build: ./logs
+    restart: always
+
 
 volumes:
   postgres_data:
