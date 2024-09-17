@@ -11,6 +11,8 @@ services:
       - 3399:8000
     env_file:
       - ./.env.dev
+    networks:
+      - transcend
     depends_on:
       - db
     restart: always
@@ -23,22 +25,59 @@ services:
       - POSTGRES_USER=hello_django
       - POSTGRES_PASSWORD=hello_django
       - POSTGRES_DB=hello_django_dev
+    networks:
+      - transcend
     restart: always
 
   serv:
     build: ./nginx
     ports:
       - 3001:80
+    networks:
+      - transcend
     depends_on:
       - app
     restart: always
 
-  logs:
-    build: ./logs
-    restart: always
+  elsearch:
+    build:
+      context: ./monitor/elsearch
+      arg:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    volumes:
+      -
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environement:
+      node.name: elsearch
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
+      discovery.type: single-node
+    networks:
+      - transcend
+    restart: unless-stopped
 
+  kibana:
+    build: 
+      context: ./monitor/kibana
+      arg: ELASTIC_VERSION
+    volumes:
+      - ./kibana/config/
+    restart: unless
+
+  logstash:
+    build: ./monitor/logstash
+
+  logs:
+    build: ./monitor/config
+
+network:
+  transcend:
+    driver: bridge
 
 volumes:
   postgres_data:
+  elsearch:
 
 #https://github.com/deviantony/docker-elk
