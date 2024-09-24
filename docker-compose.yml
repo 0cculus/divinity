@@ -39,40 +39,7 @@ services:
       - app
     restart: always
 
-  elsearch:
-    build:
-      context: ./monitor/elsearch
-      arg:
-        ELASTIC_VERSION: ${ELASTIC_VERSION}
-    volumes:
-      -
-    ports:
-      - 9200:9200
-      - 9300:9300
-    environement:
-      node.name: elsearch
-      ES_JAVA_OPTS: -Xms512m -Xmx512m
-      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
-      discovery.type: single-node
-    networks:
-      - transcend
-    restart: unless-stopped
-
-  kibana:
-    build: 
-      context: ./monitor/kibana
-      arg: ELASTIC_VERSION
-    volumes:
-      - ./kibana/config/
-    restart: unless
-
-  logstash:
-    build: ./monitor/logstash
-
-  logs:
-    build: ./monitor/config
-
-network:
+networks:
   transcend:
     driver: bridge
 
