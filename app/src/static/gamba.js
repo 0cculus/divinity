@@ -5,6 +5,7 @@ var mapScore = new Map()
 
 var currentSaved = 0
 var currentLimbo = 0
+var currentScore = 0
 const minVal = 1
 const maxVal = 6
 const nbDice = 6
@@ -74,22 +75,39 @@ function clear()
 	currentLimbo = 0
 }
 
-//WIP
+function countStreak(base)
+{
+	var amount = mapScore.get(base)
+	if (amount == 3)
+		return (base * 100)
+	else if (amount == 4)
+		return (base * 200)
+}
+
+function count()
+{
+}
+
+//WIP separate limbo count to save button
 function score()
 {
 	if (currentLimbo == 0)
 		clear()
 	else if (currentSaved != 0 && currentLimbo != 0)
 	{
-		var currentScore = 0
 		tabLimbo.sort()
 		tabDiceSaved.sort()
 		for (var i = 0; i < currentSaved; i++)
 			mapScore.set(tabDiceSaved[i], mapScore.get(tabDiceSaved[i]) + 1)
 		for (var i = 0; i < currentLimbo; i++)
 			mapScore.set(tabLimbo[i], mapScore.get(tabLimbo[i]) + 1)
+		if (mapScore.get(2) < 3|| mapScore.get(3) < 3 || mapScore.get(4) < 3|| mapScore.get(6) < 3)
+			currentScore = 0
+		else
+			currentScore = count()
 		console.log(currentScore)
 	}
+	clear()
 	rerollDice()
 }
 
