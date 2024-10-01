@@ -1,0 +1,15 @@
+TODO :
+
+Loggin button
+
+Profile button (show once logged in)
+
+42 API
+
+Integrate game into window properly
+
+Game call buttons
+
+Stats from backend
+
+Leaderboard
