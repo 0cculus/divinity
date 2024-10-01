@@ -1,5 +1,7 @@
 TODO :
 
+Register button (JS part)
+
 Loggin button
 
 Profile button (show once logged in)
