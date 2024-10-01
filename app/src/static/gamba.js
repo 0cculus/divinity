@@ -1,7 +1,7 @@
 var tabDiceAvail = Array(6)
 var tabLimbo = Array(6)
 var tabDiceSaved = Array(6)
-var mapScore = new Map()
+var tabScore = Array()
 
 var currentSaved = 0
 var currentLimbo = 0
@@ -14,6 +14,7 @@ const nbDice = 6
 
 function save(id)
 {
+	console.log(tabDiceAvail)
 	index = Number(id.replace("availDie", ""))
 	if (currentLimbo < 6 && tabDiceAvail[index] != 0)
 	{
@@ -27,15 +28,19 @@ function save(id)
 
 function cacheSaved()
 {
-	for (var i = 0; i < currentLimbo; i++)
+	var currentScore = Array()
+	for (var i = 0; i < currentLimbo && currentSaved < nbDice; i++)
 	{
 		tabDiceSaved[currentSaved] = tabLimbo[i]
 		tabLimbo[i] = 0
+		currentScore.push(tabDiceSaved[currentSaved])
 		document.getElementById("savedDie" + currentSaved).value = tabDiceSaved[currentSaved]
 		document.getElementById("limboDie" + i).value = ""
 		currentSaved++
 	}
+	tabScore.push(currentScore)
 	currentLimbo = 0
+	rerollDice()
 }
 
 function rerollDice()
@@ -45,7 +50,7 @@ function rerollDice()
 		document.getElementById("availDie" + i).value = ""
 		tabDiceAvail[i] = 0
 	}
-	if (currentLimbo < nbDice)
+	if (currentSaved < nbDice)
 	{
 		for (var i = 0; i < nbDice - currentSaved; i++)
 		{
@@ -56,7 +61,10 @@ function rerollDice()
 	else
 	{
 		for (var i = 0; i < tabDiceAvail.length; i++)
-			document.getElementById("availDie" + i).value = Math.floor(Math.random() * (maxVal -minVal) + minVal)
+		{
+			tabDiceAvail[i] = Math.floor(Math.random() * (maxVal -minVal) + minVal)
+			document.getElementById("availDie" + i).value = tabDiceAvail[i]
+		}
 	}
 }
 
@@ -75,17 +83,42 @@ function clear()
 	currentLimbo = 0
 }
 
-function countStreak(base)
+function countStreak(base, amount)
 {
-	var amount = mapScore.get(base)
-	if (amount == 3)
-		return (base * 100)
-	else if (amount == 4)
-		return (base * 200)
+	if (base == 1)
+	{
+		if (amount == 3)
+			return (500)
+		else if (amount == 4)
+			return (1000)
+		else
+			return (amount * 100)
+	}
+	else if (base == 5)
+	{
+		if (amount == 3)
+			return (250)
+		else if (amount == 4)
+			return (500)
+		else 
+			return (amount * 50)
+	}
+	else
+	{
+		if (amount == 3)
+			return (base * 100)
+		else if (amount == 4)
+			return (base * 200)
+		else
+			return (-1)
+	}
 }
 
-function count()
+function count(arr)
 {
+	if (arr.length == 0)
+		return (0)
+
 }
 
 //WIP separate limbo count to save button
@@ -96,15 +129,9 @@ function score()
 	else if (currentSaved != 0 && currentLimbo != 0)
 	{
 		tabLimbo.sort()
-		tabDiceSaved.sort()
-		for (var i = 0; i < currentSaved; i++)
-			mapScore.set(tabDiceSaved[i], mapScore.get(tabDiceSaved[i]) + 1)
-		for (var i = 0; i < currentLimbo; i++)
-			mapScore.set(tabLimbo[i], mapScore.get(tabLimbo[i]) + 1)
-		if (mapScore.get(2) < 3|| mapScore.get(3) < 3 || mapScore.get(4) < 3|| mapScore.get(6) < 3)
-			currentScore = 0
-		else
-			currentScore = count()
+		for (var i = 0; i < tabScore.length; i++)
+			currentScore += Number(count(tabScore[i]))
+		currentScore += Number(count(tabLimbo))
 		console.log(currentScore)
 	}
 	clear()
@@ -167,15 +194,8 @@ function init()
 	saveDice.value = "save dice"
 	saveDice.addEventListener("click", function() {
 		cacheSaved()
-		rerollDice()
 	})
 	document.getElementById("controls").appendChild(saveDice)
-	mapScore.set(1, 0)
-	mapScore.set(2, 0)
-	mapScore.set(3, 0)
-	mapScore.set(4, 0)
-	mapScore.set(5, 0)
-	mapScore.set(6, 0)
 }
 
 init()
