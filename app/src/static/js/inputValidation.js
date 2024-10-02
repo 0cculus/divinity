@@ -23,19 +23,19 @@ function validatePassword(password) {
 }
 
 function validateRegister(userEmail, userPassword, passwordVerif) {
-    
+
     if (validateEmail(userEmail) == false) {
-        
+
         document.getElementById("registerEmailInfo").innerHTML = "Format invalide. Ex: exemple@exempleDomaine.com";
         document.getElementById("registerEmailInfo").classList.add("text-danger");
         return false;
-    } else  {
+    } else {
         document.getElementById("registerEmailInfo").innerHTML = "Votre adresse e-mail ne sera utilisée que pour vous identifier.";
         document.getElementById("registerEmailInfo").classList.remove("text-danger");
     }
 
     if (validatePassword(userPassword) == false) {
-        
+
         document.getElementById("passwordInfo").classList.add("text-danger");
         return false;
     } else { document.getElementById("passwordInfo").classList.remove("text-danger"); }
@@ -51,21 +51,38 @@ function validateRegister(userEmail, userPassword, passwordVerif) {
     return true;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
     const registerButton = document.getElementById("registerButton");
-    
-    registerButton.addEventListener("click", function() {
+
+    registerButton.addEventListener('submit', async function (event) {
 
         const registerEmail = document.getElementById("registerEmail").value;
         const registerPassword = document.getElementById("registerPassword").value;
         const passwordConfirm = document.getElementById("passwordConfirm").value;
-        
-        if (validateRegister(registerEmail, registerPassword, passwordConfirm) == true);
-        //Send to backend, check if email exists. If it does, change email for "email already used" and exit.
-        //Otherwise, show window with "an email confirmation link has been sent, please confirm before loggin in."
-        //Once email confirmed, set default username (from email) and default profile pic. Continue with loggin.
-    }); 
+
+        if (validateRegister(registerEmail, registerPassword, passwordConfirm) == true) {
+
+            let registerInfo = {
+                email: registerEmail,
+                password: registerPassword,
+            };
+            let response = await fetch('/register/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCSRFToken()
+                },
+                body: JSON.stringify(registerInfo)
+            });
+
+            if (response.ok) {
+                //"An e-mail confirmation link has been sent, please confirm"
+            }
+            //else if (email exists)
+                //"Email already used."
+        };
+    });
 });
 
 //Validate login

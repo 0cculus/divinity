@@ -15,3 +15,7 @@ Game call buttons
 Stats from backend
 
 Leaderboard
+
+!BACKEND
+
+When a new user registers, set default username from email and default picture. (Before or after email confirmation ?)
