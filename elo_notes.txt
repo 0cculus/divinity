@@ -1,6 +1,15 @@
 TODO :
 
-!For event listeners on submit buttons, not sure if "click" is ok or if it should be "submit"
+Create classes to disable/enable buttons simultaniously (Game choice menu, Pong menu, Other game menu)
+
+Game :
+    Setup Pong/Other game buttons
+
+    Setup 1v1, 1vIA and tournament buttons
+        Hide menu and show game element, start game
+
+    -Disble keyboard when not in game
+
 Login button
 
 Test login/register
@@ -18,6 +27,8 @@ Game call buttons
 Stats from backend
 
 Leaderboard
+
+!For event listeners on submit buttons, not sure if "click" is ok or if it should be "submit"
 
 !BACKEND
 
