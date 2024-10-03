@@ -2,6 +2,8 @@ TODO :
 
 Login button
 
+Test login/register
+
 Handle errors (Ex: response.fail)
 
 Profile button (show once logged in)

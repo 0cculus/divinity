@@ -47,7 +47,9 @@ document.addEventListener("DOMContentLoaded", function() {
         let userEmail = getElementById("loginEmail");
 
         if (validateLogin() == true)
-            //wait for token here
+            //Ask backend if user exists
+            //if it does, wait for token here
+            //Otherwise, 
 
     })
 })

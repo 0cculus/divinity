@@ -80,22 +80,14 @@ export function validateRegister(userEmail, userPassword, passwordVerif) {
 
 export function validateLogin(userEmail, userPassword) {
 
-    if (validateEmail(userEmail) == false) {
+    if (validateEmail(userEmail) == false || validatePassword == false) {
 
-        document.getElementById("registerEmailInfo").innerHTML = "Format invalide. Ex: exemple@exempleDomaine.com";
-        document.getElementById("registerEmailInfo").classList.add("text-danger");
+        document.getElementById("loginInfo").innerHTML = "Adresse e-mail ou mot de passe invalide.";
+        document.getElementById("loginInfo").classList.add("text-danger");
         return false;
     } else {
-        document.getElementById("registerEmailInfo").innerHTML = "";
-        document.getElementById("registerEmailInfo").classList.remove("text-danger");
+        document.getElementById("loginInfo").innerHTML = "";
+        document.getElementById("loginInfo").classList.remove("text-danger");
     }
-
-    if (validatePassword(userPassword) == false) {
-        document.getElementById("loginPasswordInfo").innerHTML = "Adresse e-mail ou mot de passe invalide."
-    }
-    else {
-        
-    }
-    //validate email and password
-    //Ask backend if user exists and password is ok
+    return true;
 }
