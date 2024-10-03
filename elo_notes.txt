@@ -1,8 +1,8 @@
 TODO :
 
-Register button (JS part)
+Login button
 
-Loggin button
+Handle errors (Ex: response.fail)
 
 Profile button (show once logged in)
 
@@ -19,3 +19,7 @@ Leaderboard
 !BACKEND
 
 When a new user registers, set default username from email and default picture. (Before or after email confirmation ?)
+
+Make sure the views have HTTPS URLS
+
+Response status vs json content (Register)
