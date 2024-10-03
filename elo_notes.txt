@@ -1,5 +1,6 @@
 TODO :
 
+!For event listeners on submit buttons, not sure if "click" is ok or if it should be "submit"
 Login button
 
 Test login/register

@@ -1,10 +1,12 @@
-import { validateRegister } from "./utils_input_validation";
+import { validateRegister } from "./utils_input_validation.js";
+import { validateLogin } from "./utils_input_validation.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
     const registerSubmitBtn = document.getElementById("registerSubmitBtn");
-
-    registerSubmitBtn.addEventListener('submit', async function (event) {
+    
+    registerSubmitBtn.addEventListener('click', async function (event) {
+        console.log("event caught");
 
         event.preventDefault();
         
@@ -37,9 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    const loginBtn = document.getElementById("loginSubmitBtn");
-
-    loginSubmitBtn.addEventListener("submit", async function() {
+    const loginSubmitBtn = document.getElementById("loginSubmitBtn");
+    
+    loginSubmitBtn.addEventListener("submit", async function(event) {
         
         event.preventDefault();
 
@@ -47,10 +49,11 @@ document.addEventListener("DOMContentLoaded", function() {
         let userEmail = getElementById("loginEmail");
 
         if (validateLogin() == true)
+        {return;}
             //Ask backend if user exists
             //if it does, wait for token here
             //Otherwise, 
 
-    })
+    });
 })
 //Validate login
