@@ -1,12 +1,10 @@
 TODO :
 
-Create classes to disable/enable buttons simultaniously (Game choice menu, Pong menu, Other game menu)
-
 Game :
     Setup Pong/Other game buttons
 
     Setup 1v1, 1vIA and tournament buttons
-        Hide menu and show game element, start game
+        Hide menu and show game element, start game. (use classes to disable/enable)
 
     -Disble keyboard when not in game
 
@@ -19,10 +17,6 @@ Handle errors (Ex: response.fail)
 Profile button (show once logged in)
 
 42 API
-
-Integrate game into window properly
-
-Game call buttons
 
 Stats from backend
 
