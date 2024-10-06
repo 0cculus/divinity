@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import { FontLoader } from 'three/addons/loaders/FontLoader';
-import { TextGeometry } from 'three/addons/geometries/TextGeometry';
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 
 
 // https://stackoverflow.com/questions/50472752/change-extrude-amount-textgeometry-three-js

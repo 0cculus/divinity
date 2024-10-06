@@ -18,14 +18,18 @@
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous">
 
-        <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.150.1/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.150.1/examples/jsm/"
-      }
-    }
-  </script>
+            <script type="importmap">
+                {
+                    "imports": {
+                        "three": "https://unpkg.com/three@0.149.0/build/three.module.js",
+                        "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.149.0/examples/jsm/controls/OrbitControls.js",
+                        "three/examples/jsm/helpers/RectAreaLightHelper": "https://unpkg.com/three@0.149.0/examples/jsm/helpers/RectAreaLightHelper.js",
+                        "three/examples/jsm/loaders/FontLoader": "https://unpkg.com/three@0.149.0/examples/jsm/loaders/FontLoader.js",
+                        "three/examples/jsm/geometries/TextGeometry": "https://unpkg.com/three@0.149.0/examples/jsm/geometries/TextGeometry.js",
+                        "three/examples/jsm/loaders/GLTFLoader": "https://unpkg.com/three@0.154.0/examples/jsm/loaders/GLTFLoader.js"
+                    }
+                }
+            </script>
 
         <script src="../static/game/main.js" type="module" defer></script>
         <!-- </head> -->
@@ -168,31 +172,40 @@
             <div class="container-game bg-dark" id="gameElement" style="display: none;"></div>
             <!--Game choice menu-->
             <div class="container-game" id="gameChoiceMenu">
-                <button type="button" class="btn btn-light game-choice-menu" id="playPongBtn">Play Pong!</button>
-                <button type="button" class="btn btn-light game-choice-menu" id="playOtherGameBtn">Play Other game!</button>
+                <button type="button" class="btn btn-light" id="playPongBtn">Play Pong!</button>
+                <button type="button" class="btn btn-light" id="playOtherGameBtn">Play Other game!</button>
             </div>
             <!--PONG game menu-->
-            <div class="container-game" id="pongGameMenu" style="display: none;">
+            <div class="container-game" id="pongMenu" style="display: none;">
                 <div class="container">
+                    <div class="row">
+                        <div class="col text-align-left">
+                            <button class="btn btn-light text-align-left" id="gameChoiceBtn">Choisir un jeu</button>
+                        </div>
+                        <div class="col text-align-right">
+                            <button class="btn btn-light">Paramètres</button>
+                        </div>
+                    </div>
                     <div class="row justify-content-center">
                         <div class="col-auto">
-                            <button type="button" class="btn btn-light pong-menu" id="play1v1Btn">1 vs 1</button>
+                            <button type="button" class="btn btn-light" id="play1v1Btn">1 vs 1</button>
                         </div>
                     </div>
                     <div class="row m-2 justify-content-center">
                         <div class="col-auto">
-                            <button type="button" class="btn btn-light pong-menu" id="play1vIABtn">1 vs IA</button>
+                            <button type="button" class="btn btn-light" id="play1vIABtn">1 vs IA</button>
                         </div>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-auto">
                             <button type="button"
-                                class="btn btn-light pong-menu" id="playTournamentBtn">Tournois</button>
+                            class="btn btn-light" id="playTournamentBtn">Tournois</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Other game menu-->
+            <div class="container-game" id="otherGameMenu" style="display: none;"></div>
         </div>
 
         <!--Game stats (Leaderboard).-->
