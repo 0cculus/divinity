@@ -1,0 +1,30 @@
+
+/*Website color palette*/
+  .background-green {
+    background-color: rgb(170, 179, 150);
+  }
+  .background-light {
+    background-color: rgb(247, 238, 211);
+  }
+  .background-brown {
+    background-color: rgb(103, 70, 54);
+  }
+
+  .text-green {
+	color: rgb(170, 179, 150);
+  }
+  .text-light {
+	color: rgb(247, 238, 211);
+  }
+  .text-brown {
+    color: rbg(103, 70, 54);
+  }
+
+  /*Custom containers*/
+  .container-game {
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+  }
