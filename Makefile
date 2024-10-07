@@ -32,4 +32,4 @@ fclean:
 	@docker-compose -f $(COMPOSE_FILE) down -v --rmi all --remove-orphans --timeout 0 || true
 	@docker system prune -af || true
 
-reset: fclean run
+reset: fclean all

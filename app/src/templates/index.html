@@ -18,7 +18,7 @@
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous">
 
-            <script type="importmap">
+        <script type="importmap">
                 {
                     "imports": {
                         "three": "https://unpkg.com/three@0.149.0/build/three.module.js",
@@ -31,7 +31,7 @@
                 }
             </script>
 
-        <script src="../static/game/main.js" type="module" defer></script>
+        <!-- <script src="../static/game/main.js" type="module" defer></script> -->
         <!-- </head> -->
 
         <body>
@@ -169,43 +169,50 @@
 
         <!--Game. Resizes when possible.-->
         <div class="container-sm background-green position-relative">
-            <div class="container-game bg-dark" id="gameElement" style="display: none;"></div>
+            <div class="container-game bg-dark" id="gameElement"
+                style="display: none;"></div>
             <!--Game choice menu-->
             <div class="container-game" id="gameChoiceMenu">
-                <button type="button" class="btn btn-light" id="playPongBtn">Play Pong!</button>
-                <button type="button" class="btn btn-light" id="playOtherGameBtn">Play Other game!</button>
+                <button type="button" class="btn btn-light"
+                id="playPongBtn">Play Pong!</button>
+                <button type="button" class="btn btn-light"
+                id="playOtherGameBtn">Play Other game!</button>
             </div>
             <!--PONG game menu-->
             <div class="container-game" id="pongMenu" style="display: none;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-align-left">
-                            <button class="btn btn-light text-align-left" id="gameChoiceBtn">Choisir un jeu</button>
-                        </div>
-                        <div class="col text-align-right">
-                            <button class="btn btn-light">Paramètres</button>
-                        </div>
+                <div class="row">
+                    <div class="col text-start m-3">
+                        <button class="btn btn-light" id="gameChoiceBtn">Choisir
+                            un jeu</button>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-light" id="play1v1Btn">1 vs 1</button>
-                        </div>
-                    </div>
-                    <div class="row m-2 justify-content-center">
-                        <div class="col-auto">
-                            <button type="button" class="btn btn-light" id="play1vIABtn">1 vs IA</button>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-auto">
-                            <button type="button"
-                            class="btn btn-light" id="playTournamentBtn">Tournois</button>
-                        </div>
+                    <div class="col text-end m-3">
+                        <button class="btn btn-light">Paramètres</button>
                     </div>
                 </div>
+                <!--Actuall menu container-->
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-light"
+                                id="play1v1Btn">1 vs 1</button>
+                        </div>
+                    </div>
+                    <div class="row m-3 d-flex justify-content-center">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-light"
+                                id="play1vIABtn">1 vs IA</button>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-auto">
+                            <button type="button"
+                                class="btn btn-light"
+                                id="playTournamentBtn">Tournois</button>
+                        </div>
+                    </div>
             </div>
             <!--Other game menu-->
-            <div class="container-game" id="otherGameMenu" style="display: none;"></div>
+            <div class="container-game" id="otherGameMenu"
+                style="display: none;"></div>
         </div>
 
         <!--Game stats (Leaderboard).-->
@@ -216,10 +223,12 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
         <div id="content"></div>
-        <script src="{% static 'gamba.js' %}"></script>
+        <!-- <script src="{% static 'gamba.js' %}"></script> -->
         <script src="{% static 'js/register_login.js' %}"
             type="module"></script>
-        <script src="{% static 'js/pong_launcher.js' %}" type="module"></script>
+        <script src="{% static 'js/game_menus.js' %}"
+            type="module"></script>
+        <!-- <script src="{% static 'js/pong_launcher.js' %}" type="module"></script> -->
     </body>
 
 </html>

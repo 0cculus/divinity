@@ -15,10 +15,10 @@ function disableMenu(menu) {
 
     const menuBtns = menu.querySelectorAll("button");
 
+    menu.style.display = "none"
     menuBtns.forEach(button => {
         button.disabled = true;
     });
-    menu.style.display = "none;"
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const gameChoiceMenu = document.getElementById("gameChoiceMenu");
     const pongMenu = document.getElementById("pongMenu");
-    const otherGameMenu = docuemnt.getElementById("otherGameMenu");
+    const otherGameMenu = document.getElementById("otherGameMenu");
 
     playPongBtn.addEventListener("click", function() {
 
@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         disableMenu(gameChoiceMenu);
         enableMenu(otherGameMenu);
     });
-
 });
 
 

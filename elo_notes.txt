@@ -15,6 +15,7 @@ Test login/register
 Handle errors (Ex: response.fail)
 
 Profile button (show once logged in)
+    Handle when enabled/disabled
 
 42 API
 
