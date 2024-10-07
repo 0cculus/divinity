@@ -10,11 +10,12 @@ const minVal = 1
 const maxVal = 6
 const nbDice = 6
 
-// array: slice to remove first, pop to remove last
+/* ------------------------------- */
+// WIP CHANGE TO 2 USERS PLAYSTYLE //
+/* ------------------------------- */
 
 function save(id)
 {
-	console.log(tabDiceAvail)
 	index = Number(id.replace("availDie", ""))
 	if (currentLimbo < 6 && tabDiceAvail[index] != 0)
 	{
@@ -85,48 +86,62 @@ function clear()
 
 function countStreak(base, amount)
 {
+	if (amount == 0)
+		return (Number(0))
 	if (base == 1)
 	{
 		if (amount == 3)
-			return (500)
+			return (Number(500))
 		else if (amount == 4)
-			return (1000)
+			return (Number(1000))
 		else
-			return (amount * 100)
+			return (Number(amount * 100))
 	}
 	else if (base == 5)
 	{
 		if (amount == 3)
-			return (250)
+			return (Number(250))
 		else if (amount == 4)
-			return (500)
+			return (Number(500))
 		else 
-			return (amount * 50)
+			return (Number(amount * 50))
 	}
 	else
 	{
 		if (amount == 3)
-			return (base * 100)
+			return (Number(base * 100))
 		else if (amount == 4)
-			return (base * 200)
+			return (Number(base * 200))
 		else
-			return (-1)
+			return (Number(-1))
 	}
 }
 
 function count(arr)
 {
+	var currentCount = 0
 	if (arr.length == 0)
-		return (0)
-
+		return (Number(0))
+	for (var base = 1; base <= nbDice; base++)
+	{
+		var amount = 0
+		for (var i = 0; i < arr.length; i++)
+		{
+			if (arr[i] == base)
+				amount++
+		}
+		console.log("base: ", base, "amount: ", amount, "count: ", countStreak(base, amount))
+		currentCount += Number(countStreak(base, amount))
+		
+	}
+	return (Number(currentCount))
 }
 
-//WIP separate limbo count to save button
 function score()
 {
 	if (currentLimbo == 0)
 		clear()
-	else if (currentSaved != 0 && currentLimbo != 0)
+	else if (currentSaved != 0 || currentLimbo != 0)
 	{
 		tabLimbo.sort()
 		for (var i = 0; i < tabScore.length; i++)
@@ -134,6 +149,7 @@ function score()
 		currentScore += Number(count(tabLimbo))
 		console.log(currentScore)
 	}
+	tabScore = []
 	clear()
 	rerollDice()
 }
