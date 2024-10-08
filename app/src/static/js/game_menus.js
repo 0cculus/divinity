@@ -21,32 +21,35 @@ function disableMenu(menu) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function init() {
 
     const playPongBtn = document.getElementById("playPongBtn");
     const playOtherGameBtn = document.getElementById("playOtherGameBtn");
-
-    const gameChoiceMenu = document.getElementById("gameChoiceMenu");
+    const chooseGameBtn = document.getElementById("gameChoiceBtn");
+    
     const pongMenu = document.getElementById("pongMenu");
     const otherGameMenu = document.getElementById("otherGameMenu");
-
+    const gameChoiceMenu = document.getElementById("gameChoiceMenu");
+    
     playPongBtn.addEventListener("click", function() {
-
+        
         disableMenu(gameChoiceMenu);
         enableMenu(pongMenu);
-
+        
     });
     
     playOtherGameBtn.addEventListener("click", function() {
-
+        
         disableMenu(gameChoiceMenu);
         enableMenu(otherGameMenu);
     });
-});
+    
+    chooseGameBtn.addEventListener("click", function() {
+        
+        disableMenu(pongMenu);
+        disableMenu(otherGameMenu);
+        enableMenu(gameChoiceMenu);
+    })
+}
 
-
-
-
-
-
-
+init();

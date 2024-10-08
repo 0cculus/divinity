@@ -173,10 +173,18 @@
                 style="display: none;"></div>
             <!--Game choice menu-->
             <div class="container-game" id="gameChoiceMenu">
-                <button type="button" class="btn btn-light"
-                id="playPongBtn">Play Pong!</button>
-                <button type="button" class="btn btn-light"
-                id="playOtherGameBtn">Play Other game!</button>
+                <div class="container-fluid position-absolute top-50 start-50 translate-middle">
+                    <div class="row justify-content-center">
+                        <div class="col text-end">
+                            <button type="button" class="btn btn-light"
+                            id="playPongBtn">Play Pong!</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-light"
+                            id="playOtherGameBtn">Play Other game!</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!--PONG game menu-->
             <div class="container-game" id="pongMenu" style="display: none;">
@@ -190,6 +198,7 @@
                     </div>
                 </div>
                 <!--Actuall menu container-->
+                <div class="container-fluid position-absolute top-50 start-50 translate-middle">
                     <div class="row d-flex justify-content-center">
                         <div class="col-auto">
                             <button type="button" class="btn btn-light"
@@ -209,6 +218,7 @@
                                 id="playTournamentBtn">Tournois</button>
                         </div>
                     </div>
+                </div>
             </div>
             <!--Other game menu-->
             <div class="container-game" id="otherGameMenu"
