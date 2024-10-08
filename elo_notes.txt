@@ -1,14 +1,17 @@
 TODO :
 
 Game :
+    Cleanup structure
+
     Setup Pong/Other game buttons
 
     Setup 1v1, 1vIA and tournament buttons
         Hide menu and show game element, start game.
 
-    -Disble keyboard when not in game
-
 Login button
+
+Fix register button
+    GetToken() function
 
 Test login/register
 
@@ -31,4 +34,4 @@ When a new user registers, set default username from email and default picture. 
 
 Make sure the views have HTTPS URLS
 
-Response status vs json content (Register)
+Response status vs json content (Register) (Verify email existence)

@@ -4,7 +4,7 @@ export class Tournament {
   constructor(
     _PlayersNames     = ['mike' ,          'bob',  'liza',          'rose' ],
     _PlayersColors    = ['green',          'red',  'blue',          'White'],
-    _PlayerColorsName = ['lightseagreen' , 'pink', 'darkslateblue', 'gray' ]
+    _PlayerColorsName = ['lightseagreen' , 'pink', 'darkslateblue', 'gray' ],
   ) {
     this._PlayersNames = _PlayersNames
     this._PlayersColors = _PlayersColors
@@ -15,6 +15,7 @@ export class Tournament {
     this._totalRound = 0
     this._tempList = []
     this._roundIndex = 0
+    this._roundWiner = []
   }
   copy(data) {
     this._PlayersNames     =  data._PlayersNames
@@ -26,6 +27,7 @@ export class Tournament {
     this._totalRound       =  data._totalRound
     this._tempList         =  data._tempList
     this._roundIndex       =  data._roundIndex
+    this._roundWiner       =  data._roundWiner
   }
   setPlayersNames(names) { this._PlayersNames = names }
 
@@ -39,16 +41,14 @@ export class Tournament {
 
   start() {
     // safety
-    //if (!this._game)     { alert("no gameMode set!"); return }
-    //if (!this._GameData) { alert("no gameData set!"); return }
-    //
+    if (!this._game)     { alert("no gameMode set!"); return }
+    if (!this._GameData) { alert("no gameData set!"); return }
+    
     this._GameData.resetTime()
     //this._GameData.setEndGame(this.nextRound)
     const firstSize = this._PlayersNames.length
     let endSize = 1
-    for (let size = firstSize; size / 2 >= 1; size /= 2) {
-      endSize++
-    }
+    for (let size = firstSize; size / 2 >= 1; size /= 2) { endSize++ }
     let pose = 0
     for (let index = 0; index < endSize - 1; index++) {
       this._tempList.push([pose, pose + 1])
@@ -69,9 +69,6 @@ export class Tournament {
       playercolor.push(this._PlayersColors[this._tempList[this._roundIndex][index]])
       playercolorName.push(this._PlayerColorsName[this._tempList[this._roundIndex][index]])
     }
-    console.log(name)
-    console.log(playercolor)
-    console.log(playercolorName)
     this._GameData.setNames(name)
     this._GameData.setPlayerColors(playercolor)
     this._GameData.setPlayersColors(playercolorName)
@@ -80,6 +77,5 @@ export class Tournament {
     ft(this._GameData, this)
   }
   end() {
-
   }
 }

@@ -2,9 +2,9 @@ let playingPong = false;
 let playingOther = false;
 
 function enableMenu(menu) {
-
+    
     const menuBtns = menu.querySelectorAll("button");
-
+    
     menuBtns.forEach(button => {
         button.disabled = false;
     });
@@ -12,9 +12,9 @@ function enableMenu(menu) {
 } 
 
 function disableMenu(menu) {
-
+    
     const menuBtns = menu.querySelectorAll("button");
-
+    
     menu.style.display = "none"
     menuBtns.forEach(button => {
         button.disabled = true;
@@ -22,20 +22,21 @@ function disableMenu(menu) {
 }
 
 function init() {
-
+    
     const playPongBtn = document.getElementById("playPongBtn");
     const playOtherGameBtn = document.getElementById("playOtherGameBtn");
     const chooseGameBtn = document.getElementById("gameChoiceBtn");
+    const settingsBtn = document.getElementById("settingsBtn");
     
     const pongMenu = document.getElementById("pongMenu");
     const otherGameMenu = document.getElementById("otherGameMenu");
     const gameChoiceMenu = document.getElementById("gameChoiceMenu");
+
     
     playPongBtn.addEventListener("click", function() {
         
         disableMenu(gameChoiceMenu);
         enableMenu(pongMenu);
-        
     });
     
     playOtherGameBtn.addEventListener("click", function() {
@@ -51,5 +52,7 @@ function init() {
         enableMenu(gameChoiceMenu);
     })
 }
+
+//!while in game, disable settings btn
 
 init();

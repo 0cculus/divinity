@@ -169,34 +169,36 @@
 
         <!--Game. Resizes when possible.-->
         <div class="container-sm background-green position-relative">
-            <div class="container-game bg-dark" id="gameElement"></div>
+            <!--navbar-->
+            <div class="row d-flex" id="navBar">
+                <div class="col text-start m-3">
+                    <button class="btn btn-light" style="display: none;" id="gameChoiceBtn">Choisir
+                        un jeu</button>
+                    </div>
+                    <div class="col text-end m-3">
+                        <button class="btn btn-light" id="settingsBtn">Paramètres</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm container-game bg-dark" id="gameElement"></div>
             <!--Game choice menu-->
-            <div class="container-game" id="gameChoiceMenu">
-                <div class="container-fluid position-absolute top-50 start-50 translate-middle">
-                    <div class="row justify-content-center">
-                        <div class="col text-end">
-                            <button type="button" class="btn btn-light"
-                            id="playPongBtn">Play Pong!</button>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-light"
-                            id="playOtherGameBtn">Play Other game!</button>
+                <div class="container-game container-sm background-green" id="gameChoiceMenu">
+                    <div class="container-fluid position-absolute top-50 start-50 translate-middle">
+                        <div class="row justify-content-center">
+                            <div class="col text-end">
+                                <button type="button" class="btn btn-light"
+                              id="playPongBtn">Play Pong!</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn btn-light"
+                                id="playOtherGameBtn">Play Other game!</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!--PONG game menu-->
             <div class="container-game" id="pongMenu" style="display: none;">
-                <div class="row">
-                    <div class="col text-start m-3">
-                        <button class="btn btn-light" id="gameChoiceBtn">Choisir
-                            un jeu</button>
-                    </div>
-                    <div class="col text-end m-3">
-                        <button class="btn btn-light">Paramètres</button>
-                    </div>
-                </div>
-                <!--Actuall menu container-->
                 <div class="container-fluid position-absolute top-50 start-50 translate-middle">
                     <div class="row d-flex justify-content-center">
                         <div class="col-auto">

@@ -225,7 +225,6 @@ function score() {
   })
   if (WinRound !== 0) {
     Pause = true
-    console.log(Round)
     Ball[0].setSpeed(BallSpeed)
     if (WinRound > 0)
       ScoreValue[0]++
@@ -258,28 +257,26 @@ function moveText() {
 // await new Promise(r => setTimeout(r, 1000));
 
 function keybordGame(noGame) {
-  if (noGame) {
-    Players.forEach((player) => { player.update(Map[0])})
-    Players.forEach(p => {p.position.x = 0})
-    return
-  }
+  if (newGamedata._keybordMode) {
+    if (noGame) {
+      Players.forEach((player) => { player.update(Map[0])})
+      Players.forEach(p => {p.position.x = 0})
+      return
+    }
     if (keys.a.pressed && Players[0].position.x >
     (GameSize / 2) * -1 + (Players[0].width / 2)) {
       Players[0].velocity.x = PlayerSpeed * -1
     }
-    else if (keys.d.pressed && Players[0].position.x <
-      (GameSize / 2) - (Players[0].width / 2)) {
-        Players[0].velocity.x = PlayerSpeed
-      }
-    if (keys.left.pressed && Players[1].position.x >
-    (GameSize / 2) * -1 + (Players[1].width / 2)) {
+    else if (keys.d.pressed && Players[0].position.x < (GameSize / 2) - (Players[0].width / 2)) { 
+      Players[0].velocity.x = PlayerSpeed }
+    if (keys.left.pressed && Players[1].position.x > (GameSize / 2) * -1 + (Players[1].width / 2)) {
       Players[1].velocity.x = PlayerSpeed * -1
     }
-    else if (keys.right.pressed && Players[1].position.x <
-      (GameSize / 2) - (Players[1].width / 2)) {
+    else if (keys.right.pressed && Players[1].position.x < (GameSize / 2) - (Players[1].width / 2)) {
         Players[1].velocity.x = PlayerSpeed
     }
-  Players.forEach((player) => { player.update(Map[0])})
+    Players.forEach((player) => { player.update(Map[0])})
+  }
 }
 
 
@@ -294,6 +291,9 @@ function moveTrees(gamesize) {
   })
 }
 
+function selecWin(score) {
+  return Number(score[1] > score[0])
+}
 
 async function Gaming() {
   let end = 0
@@ -353,7 +353,15 @@ async function Gaming() {
     requestAnimationFrame(Gaming)
   }
   else {
+    //newTrounemanData._roundWiner.push()
     // end of the game here
+    const win =  Number(selecWin(ScoreValue))
+    newTrounemanData._roundWiner.push([
+      newGamedata.getName(win), 
+      newGamedata.getPlayerColor(win), 
+      newGamedata.getPlayerNameColor(win)])
+    console.log("ici > ")
+    console.log(newTrounemanData._roundWiner)
     const ft = newGamedata.getEndGame()
     newGamedata.setEndScore(ScoreValue)
     ft(newGamedata, newTrounemanData)

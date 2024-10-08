@@ -30,22 +30,21 @@ let    endBoard          =  []
 
 let    Moon              =  null
 let    MoonSpin          =  0
+let    speed             = 0.01
+
 //"moon" (https://skfb.ly/oFR LK) by RenderX is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 const  newGamedata       =   new GameData
 const  newTrounemanData  =   new Tournament
 
-let stored
-let myVar
 export async function initEndGame(gamedata, tournamentdata)
 {
   newGamedata.copy(gamedata)
   newTrounemanData.copy(tournamentdata)
   //
   CamX = 5
-  stored = localStorage['game'];
-  if (stored) { myVar = JSON.parse(stored); }
-  console.log(myVar)
+  MoonSpin = 0
+  speed = 0
   camera.position.set(0, 109 ,0)
   Light[0] = new THREE.DirectionalLight(0xffffff, 1)
   Light[0].position.y = 5
@@ -55,7 +54,6 @@ export async function initEndGame(gamedata, tournamentdata)
     light.castShadow = true
     scene.add(light)
   })
-  MoonSpin = 0
   const moonSize = 20
   Moon = new MODEL3D(scene, {x:0 , y:-15, z:0}, [moonSize, moonSize ,moonSize], 'static/game/model/moon.glb')
   Maps[0] = new ball({
@@ -118,7 +116,6 @@ async function LeaveEndGame() {
   Moon.kill()
 }
 
-let speed = 0.01
 
 async function EndGameLoop() {
   MoonSpin += speed
