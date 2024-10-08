@@ -9,7 +9,7 @@ import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 
 export class Text {
   constructor(scene, position, initialText, color = 'blue', 
-    FontName = 'fonts/Ubuntu Light_Bold.json', detail = {}) {
+    FontName = 'static/game/fonts/Ubuntu Light_Bold.json', detail = {}) {
     this.scene = scene;
     this.position = position;
     this.rotation = {x:0, y:0, z:0}

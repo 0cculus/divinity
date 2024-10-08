@@ -57,7 +57,7 @@ export async function initEndGame(gamedata, tournamentdata)
   })
   MoonSpin = 0
   const moonSize = 20
-  Moon = new MODEL3D(scene, {x:0 , y:-15, z:0}, [moonSize, moonSize ,moonSize], 'model/moon.glb')
+  Moon = new MODEL3D(scene, {x:0 , y:-15, z:0}, [moonSize, moonSize ,moonSize], 'static/game/model/moon.glb')
   Maps[0] = new ball({
     width: 1,
     height: 0.5,

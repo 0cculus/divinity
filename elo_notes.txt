@@ -4,7 +4,7 @@ Game :
     Setup Pong/Other game buttons
 
     Setup 1v1, 1vIA and tournament buttons
-        Hide menu and show game element, start game. (use classes to disable/enable)
+        Hide menu and show game element, start game.
 
     -Disble keyboard when not in game
 

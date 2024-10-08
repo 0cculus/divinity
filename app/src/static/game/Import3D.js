@@ -17,7 +17,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export class MODEL3D {
     constructor(scene, position, size = [1,1,1], 
-      ModelName = 'model/three.glb') {
+      ModelName = 'static/game/model/three.glb') {
       this.scene = scene;
       this.position = position;
       this.rotation = {x:0, y:0, z:0}
