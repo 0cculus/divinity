@@ -1,4 +1,4 @@
-class User
+export class Player
 {
 	score = 0
 	name

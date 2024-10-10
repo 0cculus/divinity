@@ -1,11 +1,16 @@
+import Player from './userGamba.js'
+
 var tabDiceAvail = Array(6)
-var tabLimbo = Array(6)
 var tabDiceSaved = Array(6)
+var tabPlayer = Array(2)
+var tabLimbo = Array(6)
 var tabScore = Array()
 
 var currentSaved = 0
 var currentLimbo = 0
 var currentScore = 0
+var playerCount = 0
+var currentPlayer = null
 const minVal = 1
 const maxVal = 6
 const nbDice = 6
@@ -150,6 +155,8 @@ function score()
 		console.log(currentScore)
 	}
 	tabScore = []
+	playerCount++
+	currentPlayer = tabPlayer[playerCount % 2]
 	clear()
 	rerollDice()
 }
@@ -212,6 +219,10 @@ function init()
 		cacheSaved()
 	})
 	document.getElementById("controls").appendChild(saveDice)
+
+	playerCount = 0
+	tabPlayer[0] = new Player("Cathan")
+	tabPlayer[1] = new Player("Felix")
 }
 
 init()
