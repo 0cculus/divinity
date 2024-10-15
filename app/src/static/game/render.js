@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-const ratio = 1.5
+const ratio = 1
 const container = document.getElementById("gameElement");
 
 export const scene = new THREE.Scene()
