@@ -34,23 +34,21 @@
         <script src="../static/game/main.js" type="module" defer></script>
         </head>
 
-        <body>
+        <body class="background-light">
             <!--Header-->
             <div class="container-fluid">
-                <div class="row p-3 text-center background-green text-brown">
+                <div class="row p-3 text-center background-green">
                     <h1>Transcendence</h1>
                 </div>
             </div>
             <!--Register and login button, with some stats(to add later from DB)-->
-            <div class="container-sm">
-                <div class="row align-items-baseline background-light">
-                    <div
-                        class="col mb-2 text-brown text-start">Statistiques</div>
+            <div class="container-md">
+                <div class="row align-items-baseline background-brown p-3">
                     <div class="col text-end">
-                        <button type="button" class="btn btn-outline-success"
+                        <button type="button" class="btn btn-success"
                             data-bs-toggle="modal"
                             data-bs-target="#loginModal">Connexion</button>
-                        <button type="button" class="btn btn-outline-success"
+                        <button type="button" class="btn btn-success"
                             data-bs-toggle="modal"
                             data-bs-target="#registerModal">Inscription</button>
                     </div>
@@ -168,21 +166,18 @@
         </div>
 
         <!--Game. Resizes when possible.-->
-        <div class="container-sm background-green position-relative">
+        <div class="container-md background-green position-relative">
             <!--navbar-->
             <div class="row d-flex" id="navBar">
                 <div class="col text-start m-3">
                     <button class="btn btn-light" style="display: none;" id="gameChoiceBtn">Choisir
                         un jeu</button>
                     </div>
-                    <div class="col text-end m-3">
-                        <button class="btn btn-light" id="settingsBtn">Paramètres</button>
-                    </div>
                 </div>
             </div>
-            <div class="container-sm container-game bg-dark" id="gameElement"></div>
+            <div class="container-md container-game bg-dark" id="gameElement"></div>
             <!--Game choice menu-->
-                <div class="container-game container-sm background-green" id="gameChoiceMenu">
+                <div class="container-game container-md background-green" id="gameChoiceMenu">
                     <div class="container-fluid position-absolute top-50 start-50 translate-middle">
                         <div class="row justify-content-center">
                             <div class="col text-end">
@@ -219,6 +214,9 @@
                                 id="playTournamentBtn">Tournois</button>
                         </div>
                     </div>
+                    <div class="col text-end m-3">
+                        <button class="btn btn-light" id="settingsBtn">Paramètres</button>
+                    </div>
                 </div>
             </div>
             <!--Other game menu-->
@@ -227,7 +225,7 @@
         </div>
 
         <!--Game stats (Leaderboard).-->
-        <div class="container-sm">This is gonna be the leaderboard !</div>
+        <div class="container-md">This is gonna be the leaderboard !</div>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

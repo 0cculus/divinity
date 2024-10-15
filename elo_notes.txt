@@ -1,12 +1,17 @@
 TODO :
 
+Change navbar
+    - Parameters in game menu
+    - Choose game top right of game element
+
 Game :
     Cleanup structure
 
-    Setup Pong/Other game buttons
+    Setup navbar with game choice
 
-    Setup 1v1, 1vIA and tournament buttons
-        Hide menu and show game element, start game.
+    Setup Pong/Other game buttons
+        Start game, tournament etc
+        Integrate customization when starting game
 
 Login button
 
@@ -35,3 +40,28 @@ When a new user registers, set default username from email and default picture. 
 Make sure the views have HTTPS URLS
 
 Response status vs json content (Register) (Verify email existence)
+
+
+BACK - FRONT COM
+
+-> == frontend to backend
+<- == backend to frontend
+
+Exchange user data (register)
+    ->  Email, password
+    <- Email exists or not
+
+Exchange user data (login)
+    -> Email, password
+    <- Validity
+    <- Tokens
+    <- Profile (picture, username, game stats)
+
+Leaderboard
+    -> New game data
+    <- total game data
+
+Profile lookup (?)
+    -> username
+    <- validity
+    <- Profile (picture, username, game stats)

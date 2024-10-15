@@ -2,11 +2,12 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 const ratio = 1.5
+const container = document.getElementById("gameElement");
 
 export const scene = new THREE.Scene()
 export const camera = new THREE.PerspectiveCamera(
   75,
-  window.innerWidth / window.innerHeight,
+  1,
   0.1,
   1000
 )
@@ -16,18 +17,16 @@ export const renderer = new THREE.WebGLRenderer({
   antialias: true
 })
 
-const container = document.getElementById("gameElement");
-
 window.addEventListener('resize', function( ) {
-  const newW = container.clientWidth / ratio
-  const newH = container.clientHeight / ratio
-  renderer.setSize(newW, newH)
-  camera.aspect = newW / newH
+
+  let newW = container.clientWidth / ratio
+  renderer.setSize(newW, newW)
+  camera.aspect = 1
   camera.updateProjectionMatrix()
 } )
 
 renderer.shadowMap.enabled = true
-renderer.setSize(container.clientWidth / ratio, container.clientHeight / ratio)
+renderer.setSize(container.clientWidth / ratio, container.clientWidth / ratio)
 container.appendChild(renderer.domElement)
 export const controls = new OrbitControls(camera, renderer.domElement)
 
