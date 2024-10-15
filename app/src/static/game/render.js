@@ -17,16 +17,22 @@ export const renderer = new THREE.WebGLRenderer({
   antialias: true
 })
 
+let newW = container.clientWidth / ratio
+let newH = container.clientHeight / ratio
+let size = newH > newW ? newW : newH
+
 window.addEventListener('resize', function( ) {
 
   let newW = container.clientWidth / ratio
-  renderer.setSize(newW, newW)
+  let newH = container.clientHeight / ratio
+  size = newH > newW ? newW : newH
+  renderer.setSize(size, size)
   camera.aspect = 1
   camera.updateProjectionMatrix()
 } )
 
 renderer.shadowMap.enabled = true
-renderer.setSize(container.clientWidth / ratio, container.clientWidth / ratio)
+renderer.setSize(size / ratio, size / ratio)
 container.appendChild(renderer.domElement)
 export const controls = new OrbitControls(camera, renderer.domElement)
 
