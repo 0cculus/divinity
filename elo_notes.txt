@@ -65,3 +65,13 @@ Profile lookup (?)
     -> username
     <- validity
     <- Profile (picture, username, game stats)
+
+
+            <!--navbar-->
+            <div class="row d-flex" id="navBar">
+                <div class="col text-start m-3">
+                    <button class="btn btn-light" style="display: none;" id="gameChoiceBtn">Choisir
+                        un jeu</button>
+                    </div>
+                </div>
+            </div>

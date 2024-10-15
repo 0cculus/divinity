@@ -36,21 +36,23 @@
 
         <body class="background-light">
             <!--Header-->
-            <div class="container-fluid">
-                <div class="row p-3 text-center background-green">
+            <div class="container-fluid background-green p-2">
+                <div class="container-md background-green border border-2">
                     <h1>Transcendence</h1>
                 </div>
             </div>
             <!--Register and login button, with some stats(to add later from DB)-->
-            <div class="container-md">
-                <div class="row align-items-baseline background-brown p-3">
-                    <div class="col text-end">
-                        <button type="button" class="btn btn-success"
-                            data-bs-toggle="modal"
-                            data-bs-target="#loginModal">Connexion</button>
-                        <button type="button" class="btn btn-success"
-                            data-bs-toggle="modal"
-                            data-bs-target="#registerModal">Inscription</button>
+            <div class="container-md background-green position-relative">
+                <div class="container-md">
+                    <div class="row align-items-baseline background-brown p-3">
+                        <div class="col text-end">
+                            <button type="button" class="btn btn-success"
+                                data-bs-toggle="modal"
+                                data-bs-target="#loginModal">Connexion</button>
+                            <button type="button" class="btn btn-success"
+                                data-bs-toggle="modal"
+                                data-bs-target="#registerModal">Inscription</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -167,14 +169,6 @@
 
         <!--Game. Resizes when possible.-->
         <div class="container-md background-green position-relative">
-            <!--navbar-->
-            <div class="row d-flex" id="navBar">
-                <div class="col text-start m-3">
-                    <button class="btn btn-light" style="display: none;" id="gameChoiceBtn">Choisir
-                        un jeu</button>
-                    </div>
-                </div>
-            </div>
             <div class="container-md container-game bg-dark" id="gameElement"></div>
             <!--Game choice menu-->
                 <div class="container-game container-md background-green" id="gameChoiceMenu">
