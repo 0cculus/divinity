@@ -31,14 +31,16 @@
                 }
             </script>
 
-        <script src="../static/game/main.js" type="module" defer></script>
+        <!--<script src="../static/game/main.js" type="module" defer></script>-->
         </head>
 
         <body class="background-light">
             <!--Header-->
-            <div class="container-fluid background-green p-2">
-                <div class="container-md background-green border border-2">
+            <div class="container-fluid background-light p-2 text-center">
+                <div class="container-md">
+                    <div class="header-top"></div>
                     <h1>Transcendence</h1>
+                    <div class="header-bottom"></div>
                 </div>
             </div>
             <!--Register and login button, with some stats(to add later from DB)-->
@@ -229,7 +231,7 @@
         <!-- <script src="{% static 'gamba.js' %}"></script> -->
         <script src="{% static 'js/register_login.js' %}"
             type="module"></script>
-        <script src="{% static 'js/game_menus.js' %}"
+    <script src="{% static 'js/game_menus.js' %}"
             type="module"></script>
         <!-- <script src="{% static 'js/pong_launcher.js' %}" type="module"></script> -->
     </body>

@@ -28,3 +28,13 @@
       justify-content: center;
       box-sizing: border-box;
   }
+
+  .header-top {
+    border-top: 5px solid black;
+    width: 50%;
+  }
+
+  .header-bottom {
+    border-bottom: 5px solid black;
+    width: 75%;
+  }
