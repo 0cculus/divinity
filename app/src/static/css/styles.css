@@ -30,11 +30,13 @@
   }
 
   .header-top {
-    border-top: 5px solid black;
+    border-top: 5px solid rgb(170, 179, 150);
     width: 50%;
+    margin: 0 auto;
   }
 
   .header-bottom {
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid rgb(170, 179, 150);
     width: 75%;
+    margin: 0 auto;
   }

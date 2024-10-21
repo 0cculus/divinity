@@ -36,24 +36,30 @@
 
         <body class="background-light">
             <!--Header-->
-            <div class="container-fluid background-light p-2 text-center">
+            <div class="container-fluid background-light p-2 text-center sticky-top">
                 <div class="container-md">
-                    <div class="header-top"></div>
-                    <h1>Transcendence</h1>
-                    <div class="header-bottom"></div>
+                    <div class="d-flex justify-content-center">
+                        <div class="header-top"></div>
+                    </div>
+                        <h1 class="fs-3">Transcendence</h1>
+                    <div class="d-flex justify-content-center">
+                        <div class="header-bottom"></div>
+                    </div>
+                    </div>
                 </div>
             </div>
             <!--Register and login button, with some stats(to add later from DB)-->
             <div class="container-md background-green position-relative">
                 <div class="container-md">
-                    <div class="row align-items-baseline bg-dark p-3">
+                    <div class="row align-items-baseline p-2">
                         <div class="col text-end">
-                            <button type="button" class="btn btn-success"
+                            <button type="button" class="btn btn-success d-none d-md-inline"
                                 data-bs-toggle="modal"
                                 data-bs-target="#loginModal">Connexion</button>
-                            <button type="button" class="btn btn-success"
+                            <button type="button" class="btn btn-success d-none d-md-inline"
                                 data-bs-toggle="modal"
                                 data-bs-target="#registerModal">Inscription</button>
+                            <button class="btn btn-success dropdown-toggle d-md-none" type="button" id="dropdownLogin"></button>
                         </div>
                     </div>
                 </div>
@@ -171,7 +177,7 @@
 
         <!--Game-->
         <div class="container-md background-green position-relative">
-            <div class="container-md container-game bg-dark" id="gameElement"></div>
+            <div class="container-md container-game bg-dark" id="gameElement" style="display: none;"></div>
             <!--Game choice menu-->
                 <div class="container-game container-md background-green" id="gameChoiceMenu">
                     <div class="container-fluid position-absolute top-50 start-50 translate-middle">
