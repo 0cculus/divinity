@@ -24,12 +24,12 @@ function disableMenu(menu) {
 function init() {
     
     const playPongBtn = document.getElementById("playPongBtn");
-    const playOtherGameBtn = document.getElementById("playOtherGameBtn");
+    const playTranscendiceBtn = document.getElementById("playTranscendiceBtn");
     // const chooseGameBtn = document.getElementById("gameChoiceBtn");
     const settingsBtn = document.getElementById("settingsBtn");
     
     const pongMenu = document.getElementById("pongMenu");
-    const otherGameMenu = document.getElementById("otherGameMenu");
+    const TranscendiceGameMenu = document.getElementById("TranscendiceGameMenu");
     const gameChoiceMenu = document.getElementById("gameChoiceMenu");
 
     
@@ -39,16 +39,16 @@ function init() {
         enableMenu(pongMenu);
     });
     
-    playOtherGameBtn.addEventListener("click", function() {
+    playTranscendiceBtn.addEventListener("click", function() {
         
         disableMenu(gameChoiceMenu);
-        enableMenu(otherGameMenu);
+        enableMenu(TranscendiceGameMenu);
     });
     
     // chooseGameBtn.addEventListener("click", function() {
         
     //     disableMenu(pongMenu);
-    //     disableMenu(otherGameMenu);
+    //     disableMenu(TranscendiceGameMenu);
     //     enableMenu(gameChoiceMenu);
     // });
 }

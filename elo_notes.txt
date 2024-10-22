@@ -1,10 +1,6 @@
 TODO :
 
-    Fix dropdown not working
-
-Change navbar
-    - Parameters in game menu
-    - Choose game top right of game element
+Choose game button, profile button, settings button
 
 Game :
     Cleanup structure
@@ -37,12 +33,11 @@ Leaderboard
 
 !BACKEND
 
-When a new user registers, set default username from email and default picture. (Before or after email confirmation ?)
+When a new user confirms their adress, set default username from email, default picture and password. 
 
 Make sure the views have HTTPS URLS
 
 Response status vs json content (Register) (Verify email existence)
-
 
 BACK - FRONT COM
 
@@ -52,6 +47,8 @@ BACK - FRONT COM
 Exchange user data (register)
     ->  Email, password
     <- Email exists or not
+
+    !When a new user registers, if email is already waiting for confirmation, override (password).
 
 Exchange user data (login)
     -> Email, password
@@ -67,13 +64,3 @@ Profile lookup (?)
     -> username
     <- validity
     <- Profile (picture, username, game stats)
-
-
-            <!--navbar-->
-            <div class="row d-flex" id="navBar">
-                <div class="col text-start m-3">
-                    <button class="btn btn-light" style="display: none;" id="gameChoiceBtn">Choisir
-                        un jeu</button>
-                    </div>
-                </div>
-            </div>
