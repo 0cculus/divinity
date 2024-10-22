@@ -1,33 +1,36 @@
 TODO :
 
-Place back button top left
+Profile display (use random data for now)
 
-Game :
-    Cleanup structure
+Settings management
+    !TEAM
+        In-game or profile ?
 
-    Setup navbar with game choice
+Stats management
+    !TEAM
+        What do we keep and how do we keep it ?
 
-    Setup Pong/Other game buttons
-        Start game, tournament etc
-        Integrate customization when starting game
+Login/Register
+    !BACKEND
+        Register - Wait for email existence check
+            If it exists, warn user
+            If it doesn't, prompt user with "continue to login" message
+        Login - Wait for tokens
 
-Login button
+Profile
+    !BACKEND
+        Retrieve picture, name, stats etc
 
-Fix register button
-    GetToken() function
+Game menus
 
-Test login/register
+    !ANTOINE
+        Handle menu (init buttons)
+            Send data to backend (in data struct)
+        Handle "back button" while in-game (exit functions)
 
 Handle errors (Ex: response.fail)
 
-Profile button (show once logged in)
-    Handle when enabled/disabled
-
 42 API
-
-Stats from backend
-
-Leaderboard
 
 !For event listeners on submit buttons, not sure if "click" is ok or if it should be "submit"
 

@@ -51,6 +51,7 @@ function init() {
 
     backBtn.addEventListener("click", function() {
 
+        //!Exit Pong/Dice
         disableMenu(pongMenu);
         disableMenu(diceGameMenu);
         enableMenu(gameChoiceMenu);
@@ -60,7 +61,7 @@ function init() {
     })
 }
 
-//!while in game, disable settings btn
+
 
 init();
 exitMenusListeners();
