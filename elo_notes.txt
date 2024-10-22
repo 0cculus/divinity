@@ -1,6 +1,6 @@
 TODO :
 
-Choose game button, profile button, settings button
+Place back button top left
 
 Game :
     Cleanup structure

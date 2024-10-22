@@ -47,6 +47,9 @@
     <div class="container-md background-green position-relative">
         <div class="container-md">
             <div class="row align-items-baseline p-2">
+                <div class="col-auto text-start">
+                    <button class="btn btn-light" style="display: none;" disabled id="backBtn">Retour</button>
+                </div>
                 <div class="col text-end">
                     <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
                         data-bs-target="#loginModal">Connexion</button>
@@ -153,7 +156,7 @@
 
     <div id="emailConfirmationAlert" class="alert alert-success" role="alert" style="display: none;">
         Un lien de confirmation a été envoyé à votre adresse e-mail !
-        Veuillez cliquer sur le lien puis poursuivre en vous connectant.
+        Veuillez cliquer sur le lien puis poursuivre avec "Connexion".
     </div>
 
     <!--Game-->
@@ -167,14 +170,14 @@
                         <button type="button" class="btn btn-light" id="playPongBtn">Jouer à Pong!</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-light" id="playOtherGameBtn">Jouer à Transcendice!</button>
+                        <button type="button" class="btn btn-light" id="playTranscendiceBtn">Jouer à Transcendice!</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!--PONG game menu-->
-    <div class="container-game background-green" id="pongMenu" style="display: none;">
+    <div class="container-game container-md background-green" id="pongMenu" style="display: none;">
         <div class="container-fluid position-absolute top-50 start-50 translate-middle">
             <div class="row d-flex justify-content-center">
                 <div class="col-auto">
@@ -191,13 +194,22 @@
                     <button type="button" class="btn btn-light" id="playTournamentBtn">Tournois</button>
                 </div>
             </div>
-            <div class="col text-end m-3">
-                <button class="btn btn-light" id="settingsBtn">Paramètres</button>
+            <div class="row d-flex justify-content-center m-3">
+                <div class="col-auto text-start">
+                    <button class="btn btn-primary" id="settingsBtn">Paramètres</button>
+                </div>
             </div>
         </div>
     </div>
     <!--Transcendice game menu-->
-    <div class="container-game" id="TranscendiceGameMenu" style="display: none;"></div>
+    <div class="container-game container-md background-green" id="transcendiceGameMenu" style="display: none;">
+        <div class="container-fluid position-absolute top-50 start-50 translate-middle">
+            <div class="row d-flex justify-content-center">
+                <div class="col-auto text-start">
+                    <button class="btn btn-light" id="settingsBtn">Paramètres</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--Game stats (Leaderboard).-->

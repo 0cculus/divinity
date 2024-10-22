@@ -21,38 +21,46 @@ function disableMenu(menu) {
     });
 }
 
+const pongMenu = document.getElementById("pongMenu");
+const diceGameMenu = document.getElementById("transcendiceGameMenu");
+const backBtn = document.getElementById("backBtn");
+
 function init() {
     
     const playPongBtn = document.getElementById("playPongBtn");
     const playTranscendiceBtn = document.getElementById("playTranscendiceBtn");
-    // const chooseGameBtn = document.getElementById("gameChoiceBtn");
     const settingsBtn = document.getElementById("settingsBtn");
-    
-    const pongMenu = document.getElementById("pongMenu");
-    const TranscendiceGameMenu = document.getElementById("TranscendiceGameMenu");
-    const gameChoiceMenu = document.getElementById("gameChoiceMenu");
-
     
     playPongBtn.addEventListener("click", function() {
         
         disableMenu(gameChoiceMenu);
         enableMenu(pongMenu);
+
+        backBtn.style.display = "block";
+        backBtn.disabled = false;
     });
     
     playTranscendiceBtn.addEventListener("click", function() {
         
         disableMenu(gameChoiceMenu);
-        enableMenu(TranscendiceGameMenu);
+        enableMenu(diceGameMenu);
+
+        backBtn.style.display = "block";
+        backBtn.disabled = false;
     });
-    
-    // chooseGameBtn.addEventListener("click", function() {
-        
-    //     disableMenu(pongMenu);
-    //     disableMenu(TranscendiceGameMenu);
-    //     enableMenu(gameChoiceMenu);
-    // });
+
+    backBtn.addEventListener("click", function() {
+
+        disableMenu(pongMenu);
+        disableMenu(diceGameMenu);
+        enableMenu(gameChoiceMenu);
+
+        backBtn.style.display = "none";
+        backBtn.disabled = true;
+    })
 }
 
 //!while in game, disable settings btn
 
 init();
+exitMenusListeners();
