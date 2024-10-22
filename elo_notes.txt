@@ -1,5 +1,7 @@
 TODO :
 
+    Fix dropdown not working
+
 Change navbar
     - Parameters in game menu
     - Choose game top right of game element
