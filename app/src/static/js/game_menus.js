@@ -25,7 +25,7 @@ function init() {
     
     const playPongBtn = document.getElementById("playPongBtn");
     const playOtherGameBtn = document.getElementById("playOtherGameBtn");
-    const chooseGameBtn = document.getElementById("gameChoiceBtn");
+    // const chooseGameBtn = document.getElementById("gameChoiceBtn");
     const settingsBtn = document.getElementById("settingsBtn");
     
     const pongMenu = document.getElementById("pongMenu");
@@ -45,12 +45,12 @@ function init() {
         enableMenu(otherGameMenu);
     });
     
-    chooseGameBtn.addEventListener("click", function() {
+    // chooseGameBtn.addEventListener("click", function() {
         
-        disableMenu(pongMenu);
-        disableMenu(otherGameMenu);
-        enableMenu(gameChoiceMenu);
-    })
+    //     disableMenu(pongMenu);
+    //     disableMenu(otherGameMenu);
+    //     enableMenu(gameChoiceMenu);
+    // });
 }
 
 //!while in game, disable settings btn
