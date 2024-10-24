@@ -1,10 +1,8 @@
 import { validateRegister } from "./utils_input_validation.js";
 import { validateLogin } from "./utils_input_validation.js";
 
-document.addEventListener("DOMContentLoaded", function () {
+function registerUser() {
 
-    const registerSubmitBtn = document.getElementById("registerSubmitBtn");
-    
     registerSubmitBtn.addEventListener('click', async function (event) {
         console.log("event caught");
 
@@ -35,10 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
             else { return; }//!error handling here
         };
     });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
-    
+}
+
+function loginUser() {
+
     const loginSubmitBtn = document.getElementById("loginSubmitBtn");
     
     loginSubmitBtn.addEventListener("submit", async function(event) {
@@ -55,7 +54,15 @@ document.addEventListener("DOMContentLoaded", function() {
             //Otherwise, 
 
     });
-})
+
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    registerUser();
+    loginUser();
+});
+
 
 
 //Validate login

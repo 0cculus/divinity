@@ -40,3 +40,24 @@
     width: 75%;
     margin: 0 auto;
   }
+
+  .container-profile-btn {
+    position: relative;
+    width: 50px;
+    height: 60px;
+  }
+
+  .btn-profile {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+  }
+
+  .profile-img {
+    border-radius: 50%;
+    border: 2px solid white;
+  }

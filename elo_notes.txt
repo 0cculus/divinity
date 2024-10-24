@@ -2,6 +2,8 @@ TODO :
 
 Profile display (use random data for now)
 
+Color palette
+
 Settings management
     !TEAM
         In-game or profile ?
