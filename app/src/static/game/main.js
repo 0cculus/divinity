@@ -30,7 +30,6 @@ gamedata._keybordMode =  true
 Draw()          //* init
 KeyBordinput()  //> setup keybord
 
-
 TournamentData.start()
 
 {

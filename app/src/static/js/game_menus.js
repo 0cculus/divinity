@@ -11,7 +11,7 @@ function enableMenu(menu) {
     menu.style.display = "block";
 } 
 
-function disableMenu(menu) {
+export function disableMenu(menu) {
     
     const menuBtns = menu.querySelectorAll("button");
     
@@ -61,6 +61,4 @@ function init() {
     })
 }
 
-
-
-init();
+document.addEventListener("DOMContentLoaded", function() { init(); });

@@ -27,50 +27,50 @@
                 }
             </script>
 
-    <!--<script src="../static/game/main.js" type="module" defer></script>-->
+    <link rel="preload" as="image" href="{% static 'images/default_profile.png' %}">
 </head>
 
-<body class="background-light">
+<body class="background-green">
     <!--Header-->
-    <div class="container-fluid background-light p-2 text-center sticky-top">
+    <div class="container-fluid pt-2 text-center sticky-top background-light">
         <div class="container-md">
             <div class="d-flex justify-content-center">
                 <div class="header-top"></div>
             </div>
             <h1 class="fs-3">Transcendence</h1>
             <div class="d-flex justify-content-center">
-                <div class="header-bottom"></div>
+                <div class="header-bottom m-2"></div>
             </div>
         </div>
-    </div>
-    <!--Register and login buttons, with some stats(to add later from DB)-->
-    <div class="container-md background-green position-relative">
-        <div class="container-md">
-            <div class="row align-items-baseline p-2 d-flex justify-content-end">
-                <div class="col-auto text-start">
-                    <button class="btn btn-light" style="display: none;" disabled id="backBtn">Retour</button>
-                </div>
-                <div class="col text-end">
-                    <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
+        <!--Register and login buttons, with some stats(to add later from DB)-->
+        <div class="container-md background-green position-relative sticky-top border border-solid border-2 border-dark">
+            <div class="container-md">
+                <div class="row align-items-baseline p-2 d-flex justify-content-end">
+                    <div class="col-auto text-start">
+                        <button class="btn btn-light" style="display: none;" disabled id="backBtn">Retour</button>
+                    </div>
+                    <div class="col text-end">
+                        <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
                         data-bs-target="#loginModal">Connexion</button>
-                    <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
                         data-bs-target="#registerModal">Inscription</button>
-                    <!--Dropdown-->
-                    <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle d-md-none" type="button"
-                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Menu
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Inscription</a>
-                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Connexion</a>
+                        <!--Dropdown-->
+                        <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle d-md-none" type="button"
+                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Menu
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Inscription</a>
+                                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Connexion</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-auto">
-                    <div class="container-profile-btn" id="profile-btn">
-                        <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
-                        <button class="btn-light btn-profile">Profile</button>
+                    <div class="col-auto">
+                        <div class="container-profile-btn mb-2" id="profile-btn-container">
+                            <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
+                            <button class="btn-profile" id="profile-btn">Profile</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,12 +166,12 @@
     </div>
 
     <!--Game-->
-    <div class="container-md background-green position-relative">
-        <div class="container-md container-game bg-dark" id="gameElement" style="display: none;"></div>
+    <div class="container-md background-green">
+        <div class="container-md container-game bg-dark" id="gameElement" style="display: none"></div>
         <!--Game choice menu-->
-        <div class="container-game container-md background-green" id="gameChoiceMenu">
+        <div class="container-game container-md bg-dark" id="gameChoiceMenu">
             <div class="container-fluid position-absolute top-50 start-50 translate-middle">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center position-relative">
                     <div class="col text-end">
                         <button type="button" class="btn btn-light" id="playPongBtn">Jouer à Pong!</button>
                     </div>
@@ -183,11 +183,16 @@
         </div>
     </div>
     <!--PONG game menu-->
-    <div class="container-game container-md background-green" id="pongMenu" style="display: none;">
+    <div class="container-game container-md bg-dark" id="pongMenu" style="display: none;">
         <div class="container-fluid position-absolute top-50 start-50 translate-middle">
             <div class="row d-flex justify-content-center">
                 <div class="col-auto">
-                    <button type="button" class="btn btn-light" id="play1v1Btn">1 vs 1</button>
+                    <button type="button" class="btn btn-light" id="pongPlay1v1">1 vs 1</button>
+                </div>
+            </div>
+            <div class="row m-3 d-flex justify-content-center">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-light" id="play4Btn">1v1v1v1</button>
                 </div>
             </div>
             <div class="row m-3 d-flex justify-content-center">
@@ -208,7 +213,7 @@
         </div>
     </div>
     <!--Transcendice game menu-->
-    <div class="container-game container-md background-green" id="transcendiceGameMenu" style="display: none;">
+    <div class="container-game container-md bg-dark" id="transcendiceGameMenu" style="display: none;">
         <div class="container-fluid position-absolute top-50 start-50 translate-middle">
             <div class="row d-flex justify-content-center">
                 <div class="col-auto text-start">
@@ -227,6 +232,7 @@
     <div id="content"></div>
     <!-- <script src="{% static 'gamba.js' %}"></script> -->
     <script src="{% static 'js/register_login.js' %}" type="module"></script>
+    <script src="{% static 'js/start_game.js' %}" type="module"></script>
     <script src="{% static 'js/game_menus.js' %}" type="module"></script>
     <!-- <script src="{% static 'js/pong_launcher.js' %}" type="module"></script> -->
 </body>

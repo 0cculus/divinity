@@ -2,7 +2,7 @@ TODO :
 
 Profile display (use random data for now)
 
-Color palette
+Color palette (Use to make buttons apparent, look for accessibility, contrast, UX etc)
 
 Settings management
     !TEAM
@@ -22,6 +22,7 @@ Login/Register
 Profile
     !BACKEND
         Retrieve picture, name, stats etc
+        Change name ? -- Check if name is already chosen. (If option to change name, gotta check at register if the username before @ is already taken. If it is, handle that)
 
 Game menus
 
