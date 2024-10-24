@@ -21,6 +21,16 @@ let newW = container.clientWidth / ratio
 let newH = container.clientHeight / ratio
 let size = newH > newW ? newW : newH
 
+export function forceScale() {
+ 
+    let newW = container.clientWidth / ratio
+    let newH = container.clientHeight / ratio
+    size = newH > newW ? newW : newH
+    renderer.setSize(size, size)
+    camera.aspect = 1
+    camera.updateProjectionMatrix()
+}
+
 window.addEventListener('resize', function( ) {
 
   let newW = container.clientWidth / ratio
