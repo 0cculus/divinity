@@ -16,7 +16,7 @@ class loggedInUser {
 
 let loggedUser = new loggedInUser("JohnDoe", "0", "0");
 
-async function registerUser(event) {
+export async function registerUser(event) {
         
     event.preventDefault;
     
@@ -46,7 +46,7 @@ async function registerUser(event) {
     };
 }
 
-async function loginUser(event) {
+export async function loginUser(event) {
     
     event.preventDefault();
     
@@ -63,14 +63,5 @@ async function loginUser(event) {
     loggedUser.setGames("10");
     loggedUser.setWins("10");
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    
-    const loginSubmitBtn = document.getElementById("loginSubmitBtn");
-    const registerSubmitBtn = document.getElementById("registerSubmitBtn");
-    
-    loginSubmitBtn.addEventListener("submit", loginUser);
-    registerSubmitBtn.addEventListener('click', registerUser);
-});
 
 export default loggedUser;
