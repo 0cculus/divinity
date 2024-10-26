@@ -24,6 +24,7 @@ TODO Leaderboard
     When exactly should it be updated ?
 
 TODO Game management
+    !Allow to play without loggin ? (as guests ?) Otherwise disable play buttons before logged in
     Data sent to backend (when and what)
     Quit game function
     Pong modes (set it up)

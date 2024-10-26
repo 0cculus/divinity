@@ -26,20 +26,22 @@ export async function registerUser(event) {
     
     if (validateRegister(registerEmail, registerPassword, passwordConfirm) == true) {
         
-        let registerInfo = {
-            email: registerEmail,
-            password: registerPassword,
-        };
-        response = await fetch('/register/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': getCSRFToken()
-            },
-            body: JSON.stringify(registerInfo)
-        });
+        // let registerInfo = {
+        //     email: registerEmail,
+        //     password: registerPassword,
+        // };
+        // response = await fetch('/register/', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'X-CSRFToken': getCSRFToken()
+        //     },
+        //     body: JSON.stringify(registerInfo)
+        // });
         
-        if (response.ok) {
+        // if (response.ok) {}
+        if (1) //If email isnt used already (BACKEND)
+        {
             document.getElementById("emailConfirmationAlert").style.display = 'block';
         }
         else { return; }

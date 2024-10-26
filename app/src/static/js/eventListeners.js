@@ -4,7 +4,7 @@ import { play1v1Pong } from "./playPongMenu.js";
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    //Login/Register
+    //Login-Register
     const loginSubmitBtn = document.getElementById("loginSubmitBtn");
     const registerSubmitBtn = document.getElementById("registerSubmitBtn");
     

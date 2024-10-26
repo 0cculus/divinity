@@ -15,21 +15,23 @@ function validatePassword(password) {
 //CSRFToken
 
 async function checkEmailExists(email) {
+    
+    return 1;
 
-    let response = await fetch('/verifyEmailUsed/', {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json',
-            'X-CSRFToken': getCSRFToken()
-        },
-        body: JSON.stringify(email)
-    });
-    if (response.ok) {
+    // let response = await fetch('/verifyEmailUsed/', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-type': 'application/json',
+    //         'X-CSRFToken': getCSRFToken()
+    //     },
+    //     body: JSON.stringify(email)
+    // });
+    // if (response.ok) {
 
-        if (response.json == "USED") { return true; }//response.status ? Check with backend
-        else { return false; }
-    }
-    else { return; } //!error handling here
+    //     if (response.json == "USED") { return true; }//response.status ? Check with backend
+    //     else { return false; }
+    // }
+    // else { return; } //!error handling here
 }
 
 //Validate Register
@@ -42,13 +44,8 @@ export function validateRegister(userEmail, userPassword, passwordVerif) {
         document.getElementById("registerEmailInfo").innerHTML = "Format invalide. Ex: exemple@exempleDomaine.com";
         document.getElementById("registerEmailInfo").classList.add("text-danger");
         validated = false;
-    } else {
-
-        document.getElementById("registerEmailInfo").innerHTML = "Votre adresse e-mail ne sera utilisée que pour vous identifier.";
-        document.getElementById("registerEmailInfo").classList.remove("text-danger");
     }
-
-    if (checkEmailExists(userEmail) == true) {
+    else if (checkEmailExists(userEmail) == true) {
 
         document.getElementById("registerEmailInfo").innerHTML = "Adresse e-mail déjà utilisée."
         document.getElementById("registerEmailInfo").classList.add("text-danger");
