@@ -1,8 +1,57 @@
-TODO :
+TODO Register
+    ?Send data to backend
+    ?Ask backend if email exists (if it does, prompt user and start again)
+    Confirmation prompt
+    !click or sumbit ? (eventListeners)
 
-Profile display (use random data for now)
+TODO Login
+    ?Send data to backend
+    ?Save token
+    ?Create loggedInUser and change image(fetch from backend)
+    42 API
+    Switch connexion/Inscription for Profile button
+    !click or sumbit ? (eventListeners)
 
-Color palette (Use to make buttons apparent, look for accessibility, contrast, UX etc)
+TODO Profile
+    Display (username, picture, games played, games won)
+    Match history
+    Customization (ex: picture)
+
+TODO Menus
+
+TODO Leaderboard
+    Design it
+    When exactly should it be updated ?
+
+TODO Game management
+    Data sent to backend (when and what)
+    Quit game function
+    Pong modes (set it up)
+    Customization (at user identification)
+    Tournament design (who plays next)
+
+TODO Design
+    Make sure contrast is ok. Go further with css (transform, transition...)
+
+TODO Security
+    What data should the access token protect ?
+
+TODO Other
+    How to avoid users running into any errors ?
+    Check if response.fail
+    Cleanup files
+
+
+
+
+
+
+
+
+
+
+
+
 
 Settings management
     !TEAM
@@ -30,10 +79,6 @@ Game menus
         Handle menu (init buttons)
             Send data to backend (in data struct)
         Handle "back button" while in-game (exit functions)
-
-Handle errors (Ex: response.fail)
-
-42 API
 
 !For event listeners on submit buttons, not sure if "click" is ok or if it should be "submit"
 

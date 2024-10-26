@@ -1,0 +1,54 @@
+function enableMenu(menu) {
+    
+    const menuBtns = menu.querySelectorAll("button");
+    
+    menuBtns.forEach(button => {
+        button.disabled = false;
+    });
+    menu.style.display = "block";
+} 
+
+export function disableMenu(menu) {
+    
+    const menuBtns = menu.querySelectorAll("button");
+    
+    menu.style.display = "none"
+    menuBtns.forEach(button => {
+        button.disabled = true;
+    });
+}
+
+const pongMenu = document.getElementById("pongMenu");
+const diceGameMenu = document.getElementById("transcendiceGameMenu");
+const settingsBtn = document.getElementById("settingsBtn");
+
+export function enablePongMenu() {
+
+    disableMenu(gameChoiceMenu);
+    enableMenu(pongMenu);
+
+    backBtn.style.display = "block";
+    backBtn.disabled = false;
+
+    settingsBtn.style.display = "block";
+    settingsBtn.disabled = "false";
+}
+
+export function enableDiceMenu() {
+
+    disableMenu(gameChoiceMenu);
+    enableMenu(diceGameMenu);
+
+    backBtn.style.display = "block";
+    backBtn.disabled = false;
+}
+
+export function goBack() {
+
+    disableMenu(pongMenu);
+    disableMenu(diceGameMenu);
+    enableMenu(gameChoiceMenu);
+    
+    backBtn.style.display = "none";
+    backBtn.disabled = true;
+}

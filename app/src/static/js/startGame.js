@@ -7,7 +7,7 @@ import { Tournament } from '../game/tournament.js'
 import { initGame } from '../game/game.js'
 import { initDevRoom } from '../game/devRoom.js'
 
-import { disableMenu } from './game_menus.js'
+import { disableMenu } from './gameMenus.js'
 
 function startPong() {
     
