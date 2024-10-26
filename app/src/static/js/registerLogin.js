@@ -42,6 +42,10 @@ export async function registerUser(event) {
         // if (response.ok) {}
         if (1) //If email isnt used already (BACKEND)
         {
+            const registerModal = document.getElementById('registerModal');
+            const modalInstance = bootstrap.Modal.getInstance(registerModal);
+        
+            modalInstance.hide();
             document.getElementById("emailConfirmationAlert").style.display = 'block';
         }
         else { return; }

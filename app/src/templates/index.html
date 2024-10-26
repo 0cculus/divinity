@@ -124,7 +124,7 @@
                     </button>
                 </div>
                 <!--Body-->
-                <div class="modal-body background-light">
+                <div class="modal-body background-light" id="registerModalBody">
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="registerEmail" class="form-label">Adresse e-mail</label>
@@ -160,7 +160,7 @@
         </div>
     </div>
 
-    <div id="emailConfirmationAlert" class="alert alert-success" role="alert" style="display: none;">
+    <div id="emailConfirmationAlert" class="alert alert-success position-absolute" role="alert" style="display: none;">
         Un lien de confirmation a été envoyé à votre adresse e-mail !
         Veuillez cliquer sur le lien puis poursuivre avec "Connexion".
     </div>

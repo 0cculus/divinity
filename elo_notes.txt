@@ -2,6 +2,8 @@ TODO Register
     ?Send data to backend
     ?Ask backend if email exists (if it does, prompt user and start again)
     Confirmation prompt
+        Add close button to alert
+        Dismiss alert after 5 seconds
     !click or sumbit ? (eventListeners)
 
 TODO Login
