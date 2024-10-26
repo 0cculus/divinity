@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //PONG menu
     const play1v1Btn = document.getElementById("pongPlay1v1");
     
-    play1v1Btn.addEventListener("click", play1v1Pong());
+    play1v1Btn.addEventListener("click", play1v1Pong);
     
     //Transcendice menu
 });
