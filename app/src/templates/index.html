@@ -66,10 +66,40 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-auto">
-                        <div class="container-profile-btn mb-2" id="profile-btn-container">
-                            <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
-                            <button class="btn-profile" id="profile-btn">Profile</button>
+                    <!--Profile-->
+                    <div class="row p-2 d-flex justify-content-end">
+                        <div class="col-auto justify-content-center">
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Profile
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                                  <li><a class="dropdown-item" href="#">Username: <strong>JohnDoe</strong></a></li>
+                                  <li><a class="dropdown-item" href="#">Email: johndoe@example.com</a></li>
+                                  <li><hr class="dropdown-divider"></li>
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                                </ul>
+                              </div> -->
+                            <div class="dropdown container-profile-btn mb-2" id="profile-btn-container">
+                                    <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
+                                    <button class="btn btn-light btn-profile dropdown-toggle" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
+                                <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                                    <li class="dropdown-item-text d-flex justify-content-center">
+                                        <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="80" height="80" sytle="display: none;">
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li class="text-center" id="profileUsername"><strong>John Doe</strong></li>
+                                    <li><br></li>
+                                        <li class="text-center" id="profileGamesPlayed">0</li>
+                                        <li class="text-center">Parties jouées </li>
+                                        <li class="text-center" id="profileGamesWon">0</li>
+                                        <li class="text-center">Parties gagnées </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" id="profileParams" href="#">Paramètres</a></li>
+                                    <li><a class="dropdown-item" id="profileLogout" href="#">Se déconnecter</a></li>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
