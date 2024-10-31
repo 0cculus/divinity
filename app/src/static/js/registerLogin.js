@@ -1,5 +1,4 @@
-import { validateRegister } from "./credentialsValidate.js";
-import { validateLogin } from "./credentialsValidate.js";
+import { validateRegister, validateLogin } from "./credentialsValidate.js";
 
 class loggedInUser {
 
@@ -12,6 +11,10 @@ class loggedInUser {
     setName(name) { this.name = name; }
     setGames(count) { this.gamesPlayed = count; }
     setWins(count) { this.gamesWon = count; }
+
+    getName() { return this.name; }
+    getGames() { return this.gamesPlayed; }
+    getWins() { return this.gamesWon; }
 }
 
 let loggedUser = new loggedInUser("JohnDoe", "0", "0");
@@ -48,26 +51,63 @@ export async function registerUser(event) {
             modalInstance.hide();
             document.getElementById("emailConfirmationAlert").style.display = 'block';
         }
-        else { return; }
+        else {
+            //Email already used message
+        }
     };
+}
+
+function updateProfile() {
+
+    const usernameElement = document.getElementById("profileUsername");
+    const gamesPlayedElement = document.getElementById("profileGamesPlayed");
+    const gamesWonElement = document.getElementById("profileGamesWon");
+
+    usernameElement.innerHTML = loggedUser.getName();
+    gamesPlayedElement.innerHTML = loggedUser.getGames();
+    gamesWonElement.innerHTML = loggedUser.getWins();
 }
 
 export async function loginUser(event) {
     
     event.preventDefault();
     
-    let userPassword = getElementById("loginPassword");
-    let userEmail = getElementById("loginEmail");
-    
-    if (validateLogin() == true)
-        {return;}
-    //Ask backend if user exists
-    //if it does, wait for token here
-    //Otherwise, 
-    
-    loggedUser.setName("NameDB");
-    loggedUser.setGames("10");
-    loggedUser.setWins("10");
+    const userPassword = document.getElementById("loginPassword").value;
+    const userEmail = document.getElementById("loginEmail").value;
+
+    if (validateLogin(userEmail, userPassword) == true) {
+
+        if (1 /*backend com */) {
+
+            //Replace below with backend response
+            loggedUser.setGames("10");
+            loggedUser.setName("NameDB");
+            loggedUser.setWins("10");
+            updateProfile();
+
+            const loginModal = document.getElementById('loginModal');
+            const modalInstance = bootstrap.Modal.getInstance(loginModal);
+        
+            modalInstance.hide();
+            document.getElementById("profileElement").style.display = 'block';
+
+            const loginBtn = document.getElementById('loginBtn');
+            const registerBtn = document.getElementById("registerBtn");
+            const dropdownMenuBtn = document.getElementById("dropdownMenuBtn");
+
+            const registerLoginBtnElement = document.getElementById("registerLoginBtnElement");
+
+            registerLoginBtnElement.style.display = "none";
+
+            registerBtn.disabled = true;     
+            loginBtn.disabled = true;
+            dropdownMenuBtn.disabled = true;
+        }
+        else {
+            return;
+            //user or password incorrect
+        }
+    }
 }
 
 export default loggedUser;

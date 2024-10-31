@@ -7,9 +7,7 @@ function validateEmail(email) {
 function validatePassword(password) {
 
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (passwordRegex.test(password) == false)
-        return false;
-    return true;
+    return passwordRegex.test(password);
 }
 
 //CSRFToken
@@ -80,7 +78,7 @@ export function validateLogin(userEmail, userPassword) {
 
     if (validateEmail(userEmail) == false || validatePassword(userPassword) == false) {
 
-        document.getElementById("loginInfo").innerHTML = "Adresse e-mail ou mot de passe invalide.";
+        document.getElementById("loginInfo").innerHTML = "Adresse e-mail ou mot de passe invalide :(.";
         document.getElementById("loginInfo").classList.add("text-danger");
         return false;
     } else {

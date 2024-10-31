@@ -1,9 +1,6 @@
 TODO Register
     ?Send data to backend
     ?Ask backend if email exists (if it does, prompt user and start again)
-    Confirmation prompt
-        Center/change close btn position
-        Dismiss alert after 5 seconds
     !click or sumbit ? (eventListeners)
 
 TODO Login
@@ -18,6 +15,7 @@ TODO Profile
     Display (username, picture, games played, games won)
     Match history
     Customization (ex: picture)
+    Handle picture path (think of profile lookup)
 
 TODO Menus
 
@@ -27,6 +25,7 @@ TODO Leaderboard
 
 TODO Game management
     !Allow to play without loggin ? (as guests ?) Otherwise disable play buttons before logged in
+    Fix game going behind header
     Data sent to backend (when and what)
     Quit game function
     Pong modes (set it up)
@@ -34,7 +33,9 @@ TODO Game management
     Tournament design (who plays next)
 
 TODO Design
-    Make sure contrast is ok. Go further with css (transform, transition...)
+    Make sure contrast is ok.
+    Check for accessibility
+    Go further with css (transform, transition...)
 
 TODO Security
     What data should the access token protect ?

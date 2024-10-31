@@ -49,18 +49,18 @@
                     <div class="col-auto text-start">
                         <button class="btn btn-light" style="display: none;" disabled id="backBtn">Retour</button>
                     </div>
-                    <div class="col text-end">
+                    <div class="col text-end" id="registerLoginBtnElement">
                         <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
-                        data-bs-target="#loginModal">Connexion</button>
+                        data-bs-target="#loginModal" id="loginBtn">Connexion</button>
                         <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
-                        data-bs-target="#registerModal">Inscription</button>
+                        data-bs-target="#registerModal" id="registerBtn">Inscription</button>
                         <!--Dropdown-->
                         <div class="dropdown">
                                 <button class="btn btn-light dropdown-toggle d-md-none" type="button"
-                                id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+                                id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">Menu
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuBtn">
                                 <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Inscription</a>
                                 <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Connexion</a>
                             </div>
@@ -69,22 +69,10 @@
                     <!--Profile-->
                     <div class="row p-2 d-flex justify-content-end">
                         <div class="col-auto justify-content-center">
-                            <!-- <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Profile
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                                  <li><a class="dropdown-item" href="#">Username: <strong>JohnDoe</strong></a></li>
-                                  <li><a class="dropdown-item" href="#">Email: johndoe@example.com</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                                  <li><a class="dropdown-item" href="#">Logout</a></li>
-                                </ul>
-                              </div> -->
-                            <div class="dropdown container-profile-btn mb-2" id="profile-btn-container">
+                            <div class="dropdown container-profile-btn mb-2" disabled id="profileElement" style="display: none;">
                                     <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
-                                    <button class="btn btn-light btn-profile dropdown-toggle" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
-                                <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                                    <button class="btn btn-light btn-profile dropdown-toggle" data-bs-display="static" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                                     <li class="dropdown-item-text d-flex justify-content-center">
                                         <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="80" height="80" sytle="display: none;">
                                     </li>
@@ -98,7 +86,7 @@
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" id="profileParams" href="#">Paramètres</a></li>
                                     <li><a class="dropdown-item" id="profileLogout" href="#">Se déconnecter</a></li>
-                                </div>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -262,7 +250,6 @@
         <div class="container-fluid position-absolute top-50 start-50 translate-middle">
             <div class="row d-flex justify-content-center">
                 <div class="col-auto text-start">
-                    <button class="btn btn-light" id="settingsBtn">Paramètres</button>
                 </div>
             </div>
         </div>
