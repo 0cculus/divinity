@@ -1,6 +1,7 @@
-import { loginUser, registerUser } from "./registerLogin.js";
+import { loginUser, registerUser, logoutUser } from "./registerLogin.js";
 import {enablePongMenu, enableDiceMenu, goBack } from "./chooseGameMenu.js";
 import { play1v1Pong } from "./playPongMenu.js";
+
 
 document.addEventListener("DOMContentLoaded", function() {
     
@@ -10,6 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
     
     loginSubmitBtn.addEventListener("click", loginUser);
     registerSubmitBtn.addEventListener('click', registerUser);
+
+    //Logout
+    const logoutBtn = document.getElementById("accountLogout");
+
+    logoutBtn.addEventListener("click", logoutUser);
     
     //Game choice menu
     const playPongBtn = document.getElementById("playPongBtn");

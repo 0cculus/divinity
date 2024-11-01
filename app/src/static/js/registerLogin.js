@@ -110,4 +110,26 @@ export async function loginUser(event) {
     }
 }
 
+function logoutUser() {
+     
+    //delete access token
+    const loginModal = document.getElementById('loginModal');
+    const modalInstance = bootstrap.Modal.getInstance(loginModal);
+
+    modalInstance.show();
+    document.getElementById("profileElement").style.display = 'block';
+
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById("registerBtn");
+    const dropdownMenuBtn = document.getElementById("dropdownMenuBtn");
+
+    const registerLoginBtnElement = document.getElementById("registerLoginBtnElement");
+
+    registerLoginBtnElement.style.display = "none";
+
+    registerBtn.disabled = true;     
+    loginBtn.disabled = true;
+    dropdownMenuBtn.disabled = true;
+}
+
 export default loggedUser;
