@@ -110,14 +110,14 @@ export async function loginUser(event) {
     }
 }
 
-function logoutUser() {
+export function logoutUser() {
      
     //delete access token
     const loginModal = document.getElementById('loginModal');
     const modalInstance = bootstrap.Modal.getInstance(loginModal);
 
     modalInstance.show();
-    document.getElementById("profileElement").style.display = 'block';
+    document.getElementById("profileElement").style.display = 'none';
 
     const loginBtn = document.getElementById('loginBtn');
     const registerBtn = document.getElementById("registerBtn");
@@ -125,11 +125,11 @@ function logoutUser() {
 
     const registerLoginBtnElement = document.getElementById("registerLoginBtnElement");
 
-    registerLoginBtnElement.style.display = "none";
+    registerLoginBtnElement.style.display = "block";
 
-    registerBtn.disabled = true;     
-    loginBtn.disabled = true;
-    dropdownMenuBtn.disabled = true;
+    registerBtn.disabled = false;     
+    loginBtn.disabled = false;
+    dropdownMenuBtn.disabled = false;
 }
 
 export default loggedUser;
