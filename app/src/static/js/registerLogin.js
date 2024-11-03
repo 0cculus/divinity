@@ -113,10 +113,6 @@ export async function loginUser(event) {
 export function logoutUser() {
      
     //delete access token
-    const loginModal = document.getElementById('loginModal');
-    const modalInstance = bootstrap.Modal.getInstance(loginModal);
-
-    modalInstance.show();
     document.getElementById("profileElement").style.display = 'none';
 
     const loginBtn = document.getElementById('loginBtn');

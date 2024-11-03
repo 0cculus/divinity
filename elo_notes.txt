@@ -1,4 +1,5 @@
-!Back button is weird (on the right)
+!Back button with profile displays weirdly
+!Login modal displaying when logging out
 
 TODO Register
     ?Send data to backend
@@ -13,7 +14,7 @@ TODO Login
     !click or sumbit ? (eventListeners)
 
 TODO Profile
-    Update profile everytime button is clicked
+    Update profile every game end
     Update loggedUser every game end
     Match history
     Customization (ex: picture)

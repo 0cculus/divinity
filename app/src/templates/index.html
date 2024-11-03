@@ -67,27 +67,25 @@
                         </div>
                     </div>
                     <!--Profile-->
-                    <div class="row justify-content-end">
-                        <div class="col-auto justify-content-center">
-                            <div class="dropdown container-profile-btn mb-2" disabled id="profileElement" style="display: none;">
-                                    <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
-                                    <button class="btn btn-light btn-profile dropdown-toggle" data-bs-display="static" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                                    <li class="dropdown-item-text d-flex justify-content-center">
-                                        <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="80" height="80" sytle="display: none;">
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li class="text-center" id="profileUsername"><strong>John Doe</strong></li>
-                                    <li><br></li>
-                                        <li class="text-center" id="profileGamesPlayed">0</li>
-                                        <li class="text-center">Parties jouées </li>
-                                        <li class="text-center" id="profileGamesWon">0</li>
-                                        <li class="text-center">Parties gagnées </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" id="accountParams" href="#">Paramètres</a></li>
-                                    <li><a class="dropdown-item" id="accountLogout" href="#">Se déconnecter</a></li>
-                                </ul>
-                            </div>
+                    <div class="col-auto text-end justify-content-center">
+                        <div class="dropdown container-profile-btn mb-2" disabled id="profileElement" style="display: none;">
+                                <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
+                                <button class="btn btn-light btn-profile dropdown-toggle" data-bs-display="static" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                <li class="dropdown-item-text d-flex justify-content-center">
+                                    <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="80" height="80" sytle="display: none;">
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="text-center" id="profileUsername"><strong>John Doe</strong></li>
+                                <li><br></li>
+                                    <li class="text-center" id="profileGamesPlayed">0</li>
+                                    <li class="text-center">Parties jouées </li>
+                                    <li class="text-center" id="profileGamesWon">0</li>
+                                    <li class="text-center">Parties gagnées </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" id="accountParams" href="#">Paramètres</a></li>
+                                <li><a class="dropdown-item" id="accountLogout" href="#">Se déconnecter</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
