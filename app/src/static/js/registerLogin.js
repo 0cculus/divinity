@@ -89,7 +89,7 @@ export async function loginUser(event) {
             const modalInstance = bootstrap.Modal.getInstance(loginModal);
         
             modalInstance.hide();
-            document.getElementById("profileElement").style.display = 'block';
+            document.getElementById("profileElement").style.display = 'flex';
 
             const loginBtn = document.getElementById('loginBtn');
             const registerBtn = document.getElementById("registerBtn");

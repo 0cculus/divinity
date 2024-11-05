@@ -1,5 +1,7 @@
 !Back button with profile displays weirdly
-!Login modal displaying when logging out
+
+!unpkg not loading ?
+
 
 TODO Register
     ?Send data to backend

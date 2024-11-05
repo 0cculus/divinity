@@ -43,52 +43,44 @@
             </div>
         </div>
         <!--Register and login buttons, with some stats(to add later from DB)-->
-        <div class="container-md background-green position-relative sticky-top border border-solid border-2 border-dark">
-            <div class="container-md">
-                <div class="row align-items-baseline p-2 d-flex">
-                    <div class="col-auto text-start">
-                        <button class="btn btn-light" style="display: none;" disabled id="backBtn">Retour</button>
-                    </div>
-                    <div class="col text-end" id="registerLoginBtnElement">
-                        <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
-                        data-bs-target="#loginModal" id="loginBtn">Connexion</button>
-                        <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
-                        data-bs-target="#registerModal" id="registerBtn">Inscription</button>
-                        <!--Dropdown-->
-                        <div class="dropdown">
-                                <button class="btn btn-light dropdown-toggle d-md-none" type="button"
-                                id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">Menu
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuBtn">
-                                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Inscription</a>
-                                <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Connexion</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Profile-->
-                    <div class="col-auto text-end justify-content-center">
-                        <div class="dropdown container-profile-btn mb-2" disabled id="profileElement" style="display: none;">
-                                <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
-                                <button class="btn btn-light btn-profile dropdown-toggle" data-bs-display="static" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                                <li class="dropdown-item-text d-flex justify-content-center">
-                                    <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="80" height="80" sytle="display: none;">
-                                </li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li class="text-center" id="profileUsername"><strong>John Doe</strong></li>
-                                <li><br></li>
-                                    <li class="text-center" id="profileGamesPlayed">0</li>
-                                    <li class="text-center">Parties jouées </li>
-                                    <li class="text-center" id="profileGamesWon">0</li>
-                                    <li class="text-center">Parties gagnées </li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" id="accountParams" href="#">Paramètres</a></li>
-                                <li><a class="dropdown-item" id="accountLogout" href="#">Se déconnecter</a></li>
-                            </ul>
-                        </div>
+        <div class="container-md navbar-container background-green position-relative sticky-top border border-solid border-2 border-dark justify-content-end text-end">
+            <button class="btn btn-light" style="display: none;" disabled id="backBtn">Retour</button>
+            <div id="registerLoginBtnElement">
+                <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
+                data-bs-target="#loginModal" id="loginBtn">Connexion</button>
+                <button type="button" class="btn btn-light d-none d-md-inline" data-bs-toggle="modal"
+                data-bs-target="#registerModal" id="registerBtn">Inscription</button>
+                <!--Dropdown-->
+                <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle d-md-none" type="button"
+                        id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Menu
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuBtn">
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Inscription</a>
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Connexion</a>
                     </div>
                 </div>
+            </div>
+            <!--Profile-->
+            <div class="dropdown container-profile-btn" disabled id="profileElement" style="display: none;">
+                    <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
+                    <button class="btn btn-light btn-profile dropdown-toggle" data-bs-display="static" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    <li class="dropdown-item-text d-flex justify-content-center">
+                        <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="80" height="80" sytle="display: none;">
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="text-center" id="profileUsername"><strong>John Doe</strong></li>
+                    <li><br></li>
+                        <li class="text-center" id="profileGamesPlayed">0</li>
+                        <li class="text-center">Parties jouées </li>
+                        <li class="text-center" id="profileGamesWon">0</li>
+                        <li class="text-center">Parties gagnées </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" id="accountParams" href="#">Paramètres</a></li>
+                    <li><a class="dropdown-item" id="accountLogout" href="#">Se déconnecter</a></li>
+                </ul>
             </div>
         </div>
     </div>

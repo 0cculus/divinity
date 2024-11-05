@@ -27,7 +27,7 @@ export function enablePongMenu() {
     disableMenu(gameChoiceMenu);
     enableMenu(pongMenu);
 
-    backBtn.style.display = "block";
+    backBtn.style.display = "flex";
     backBtn.disabled = false;
 
     settingsBtn.style.display = "block";
