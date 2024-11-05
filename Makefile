@@ -1,8 +1,17 @@
 SHELL=/bin/bash
 COMPOSE_FILE="docker-compose.yml"
+FILEBEAT_COMPOSE ="extensions/filebeat/filebeat_compose.yml"
 
 
 all: build start
+
+re: fclean setup build start
+
+monitor:
+	@docker -f $(FILEBEAT_COMPOSE) up
+
+setup:
+	@docker-compose -f $(COMPOSE_FILE) up setup
 
 build:
 	@docker-compose -f $(COMPOSE_FILE) build
@@ -32,4 +41,3 @@ fclean:
 	@docker-compose -f $(COMPOSE_FILE) down -v --rmi all --remove-orphans --timeout 0 || true
 	@docker system prune -af || true
 
-reset: fclean run

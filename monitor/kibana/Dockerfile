@@ -1,4 +1,7 @@
 ARG ELASTIC_VERSION
 
-FROM docker.elastic.co/kibana/kibana:${ELASTIC_VERSION:-8.15.1}
+# https://www.docker.elastic.co/
+FROM docker.elastic.co/kibana/kibana:${ELASTIC_VERSION:-8.15.3}
 
+# Add your kibana plugins setup here
+# Example: RUN kibana-plugin install <name|url>
