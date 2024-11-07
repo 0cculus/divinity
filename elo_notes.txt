@@ -130,3 +130,10 @@ Profile lookup (?)
     -> username
     <- validity
     <- Profile (picture, username, game stats)
+
+
+OAuth Links
+https://medium.com/@katelynvan152/simplifying-oauth-implementation-in-javascript-a-step-by-step-guide-15509b7919cf
+https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce
+https://fusionauth.io/articles/oauth/modern-guide-to-oauth
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST
