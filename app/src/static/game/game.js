@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { scene, camera, Draw, SetCamMode } from './render.js'
+import { scene, camera, Draw, SetCamMode, forceScale } from './render.js'
 import { Box } from         './box.js'
 import { keys } from        './keybord.js'
 import { Text } from        './text.js'
@@ -22,6 +22,7 @@ let   BallTimer     =  0
 
 let   Round         =  -1
 let   Pause         =  true
+let   end           =  0
 let   PauseTime     =  FirstPause
 let   GameSize      =  15
 let   PlayerSpeed   =  0.15
@@ -70,6 +71,7 @@ async function makeTrees(gamesize) {
 }
 
 export async function initGame(gamedata, tournamentdata) {
+  end = 0
   newGamedata.copy(gamedata)
   newTrounemanData.copy(tournamentdata)
   newGamedata.resetTime()
@@ -214,7 +216,6 @@ async function LeaveGame() {
   GameTextScore.kill()
 }
 
-
 function score() {
   Ball.forEach(b => {
     Players.forEach(p => {
@@ -286,17 +287,16 @@ function moveTrees(gamesize) {
     const newI = tree.position.x += (rand(gamesize) * rand(2) ? 1 : -1)
     const newJ = tree.position.z += (rand(gamesize) * rand(2) ? 1 : -1)
     if ((newI < -gamesize || newI > gamesize) || (newJ < -gamesize || newJ > gamesize)) {
-      tree.move(newI , -3, newJ)
+        tree.move(newI , -3, newJ)
     }
-  })
+})
 }
 
 function selecWin(score) {
-  return Number(score[1] > score[0])
+    return Number(score[1] > score[0])
 }
 
 async function Gaming() {
-  let end = 0
   keybordGame(Pause)
   moveText()
   if (!Pause && GameLoop != 2) {
@@ -364,7 +364,17 @@ async function Gaming() {
     console.log(newTrounemanData._roundWiner)
     const ft = newGamedata.getEndGame()
     newGamedata.setEndScore(ScoreValue)
-    ft(newGamedata, newTrounemanData)
+    if (ft)
+        ft(newGamedata, newTrounemanData)
     return
   }
+}
+
+export function forceGameQuit() {
+
+    end = 1
+    newGamedata.setEndGame(null)
+    Draw()
+    forceScale()
+    //DONT send data to backend
 }

@@ -1,7 +1,6 @@
-!Back button with profile displays weirdly
-
 !unpkg not loading ?
 
+!handle logout in-game
 
 TODO Register
     ?Send data to backend
@@ -12,13 +11,14 @@ TODO Login
     ?Send data to backend
     ?Save token
     ?Change image and get info(fetch from backend)
-    42 API
+    ?42 API (PKCE) - backend
     !click or sumbit ? (eventListeners)
 
 TODO Profile
     Update profile every game end
     Update loggedUser every game end
     Match history
+    User lookup
     Customization (ex: picture)
     Handle picture path (think of profile lookup)
 
@@ -33,7 +33,6 @@ TODO Game management
     !Allow to play without loggin ? (as guests ?) Otherwise disable play buttons before logged in
     Fix game going behind header
     Data sent to backend (when and what)
-    Quit game function
     Pong modes (set it up)
     Customization (at user identification)
     Tournament design (who plays next)
@@ -52,7 +51,7 @@ TODO Security
     What data should the access token protect ?
 
 TODO Other
-    How to avoid users running into any errors ?
+    How to avoid users running into any errors ? (handle "waiting for unpkg")
     Check if response.fail
     Cleanup files
 

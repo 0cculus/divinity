@@ -36,15 +36,14 @@ export function play1v1Pong() {
     //!Envoyer data DB et update leaderboard
 }
 
-// function play1vAIPong() {
+export function play4v4Pong() {
 
-// }
+}
 
+export function playAIPong() {
 
-// function play4v4Pong() {
+}
 
-// }
+export function playTournamentPong() {
 
-// function playTournamentPong() {
-
-// }
+}

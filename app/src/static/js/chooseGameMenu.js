@@ -1,3 +1,5 @@
+import { forceGameQuit } from "../game/game.js"
+
 function enableMenu(menu) {
     
     const menuBtns = menu.querySelectorAll("button");
@@ -49,6 +51,10 @@ export function goBack() {
     disableMenu(diceGameMenu);
     enableMenu(gameChoiceMenu);
     
+    const gameElement = document.getElementById("gameElement");
+    gameElement.style.display = "none";
     backBtn.style.display = "none";
     backBtn.disabled = true;
+
+    forceGameQuit();
 }
