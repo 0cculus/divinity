@@ -21,7 +21,7 @@ const nbDice = 6
 
 function save(id)
 {
-	index = Number(id.replace("availDie", ""))
+	let index = Number(id.replace("availDie", ""))
 	if (currentLimbo < 6 && tabDiceAvail[index] != 0)
 	{
 		tabLimbo[currentLimbo] = tabDiceAvail[index]
