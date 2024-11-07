@@ -1,5 +1,34 @@
-
 /*Website color palette*/
+
+  :root {
+    --teaGreen: rgb(158,193,163);
+    --cambridgeBlue: rgb(207, 224, 195);
+    --verdigris: rgb(112,169,161);
+    --cerulean: rgb(64,121,140);
+    --plum: rgb(131,61,129);
+
+  }
+
+  .color-btn-primary {
+    background-color: var(--CambridgeBlue);
+  }
+
+  .color-btn-secondary {
+    background-color: rgb(158,193,163);
+  }
+
+  /* .color-btn-submit {
+
+  }
+
+  .color-background {
+
+  }
+
+  .color-header {
+
+  } */
+
   .background-green {
     background-color: rgb(170, 179, 150);
   }

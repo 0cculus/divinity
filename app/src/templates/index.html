@@ -30,7 +30,7 @@
     <link rel="preload" as="image" href="{% static 'images/default_profile.png' %}">
 </head>
 
-<body class="background-green">
+<body class="color-btn-primary">
     <!--Header-->
     <div class="container-fluid pt-2 text-center sticky-top background-light">
         <div class="container-md">
@@ -265,7 +265,33 @@
             </div>
         </div>
     </div>
+    
+    <!--Pong game menu modals-->
+    <div class="modal fade" id="1v1modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content background-green">
+                <!--Header-->
+                <div class="modal-header background-green">
+                    <div class="modal-title text-center">Game settings</div>
+                </div>
+                <!--Body-->
+                <div class="modal-body background-light">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col">Joueur 1</div>
+                        </div>
+                        <div class="row">
+                            <label for="passwordConfirm" class="form-label">
 
+                            </label>
+                            <input type="password" class="form-control" id="passwordConfirm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--Game stats (Leaderboard).-->
     <div class="container-md">This is gonna be the leaderboard !</div>
 
