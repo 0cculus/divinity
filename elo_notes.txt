@@ -43,6 +43,7 @@ TODO Game end
     Update Leaderboard
 
 TODO Design
+    Add color to modals
     Make sure contrast is ok.
     Check for accessibility
     Go further with css (transform, transition...)

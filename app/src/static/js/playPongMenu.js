@@ -18,11 +18,17 @@ const TournamentData = new Tournament
     //Here, retrieve players and colors, and setup GameData and Tournament.
 // }
 
+function retrieveData1v1() {
+    
+}
+
 export function play1v1Pong() {
 
     //!Fetch data from user (who is playing ?)
     gameContainer.style.display = "flex";
     disableMenu(playPongMenu);
+
+    retrieveData1v1();
 
     gamedata.setCallBack(initMenu);
     TournamentData.setGame(initGame);

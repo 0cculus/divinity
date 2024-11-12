@@ -1,53 +1,44 @@
 /*Website color palette*/
+ :root {
+    --backgroundColor: rgb(255, 221, 189);
+    --mainColor: rgb(255, 142, 38);
+    --accentLighter: rgb(215, 235, 255);
+    --accentColor: rgb(189, 223, 255);
+    --accentDarker: rgb(139, 197, 255);
+ }
 
-  :root {
-    --teaGreen: rgb(158,193,163);
-    --cambridgeBlue: rgb(207, 224, 195);
-    --verdigris: rgb(112,169,161);
-    --cerulean: rgb(64,121,140);
-    --plum: rgb(131,61,129);
+  .color-btn {
+    background-color: var(--accentLighter) !important;
+    border-color: var(--accentColor) !important;
+}
 
-  }
+  .dropdown-menu { background-color: var(--accentLighter) !important;  }
 
-  .color-btn-primary {
-    background-color: var(--CambridgeBlue);
-  }
+  .dropdown-item:hover {
+    background-color: var(--accentColor) !important;
+    background-color: var(--accentColor) !important;
+}
 
-  .color-btn-secondary {
-    background-color: rgb(158,193,163);
-  }
-
-  /* .color-btn-submit {
-
-  }
+.dropdown-item:active,
+.dropdown-item.active {
+    color: var(--accentDarker);
+}
 
   .color-background {
+      background-color: var(--backgroundColor);
+}
 
-  }
+  .color-navbar {
+    background-color: var(--mainColor);
+}
 
-  .color-header {
-
-  } */
-
-  .background-green {
-    background-color: rgb(170, 179, 150);
+  .color-accent-light {
+    background-color: var(--accentLighter);
   }
-  .background-light {
-    background-color: rgb(247, 238, 211);
-  }
-  .background-brown {
-    background-color: rgb(103, 70, 54);
-  }
-
-  .text-green {
-	color: rgb(170, 179, 150);
-  }
-  .text-light {
-	color: rgb(247, 238, 211);
-  }
-  .text-brown {
-    color: rbg(103, 70, 54);
-  }
+/*accent*/
+  .color-leaderboard {
+    background-color: var(--mainColor);
+}
 
   /*Custom containers*/
   .container-game {
@@ -59,13 +50,13 @@
   }
 
   .header-top {
-    border-top: 5px solid rgb(170, 179, 150);
+    border-top: 5px solid var(--mainColor);
     width: 50%;
     margin: 0 auto;
   }
 
   .header-bottom {
-    border-bottom: 5px solid rgb(170, 179, 150);
+    border-bottom: 5px solid var(--mainColor);
     width: 75%;
     margin: 0 auto;
   }
