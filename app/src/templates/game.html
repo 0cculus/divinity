@@ -1,0 +1,75 @@
+<!--Game-->
+<div class="container-md container-game bg-dark" id="gameContainer">
+    <div class="container-game" id="gameWindow"></div>
+    <!--Game choice menu-->
+    <div class="container-game container-md bg-dark" id="gameChoiceMenu">
+        <div class="container-fluid position-absolute top-50 start-50 translate-middle">
+            <div class="row justify-content-center position-relative">
+                <div class="col text-end">
+                    <button type="button" class="btn color-btn" id="playPongBtn">Jouer à Pong!</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn color-btn" id="playTranscendiceBtn">Jouer à Transcendice!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--PONG game menu-->
+    <div class="container-md container-game bg-dark" id="pongMenu" style="display: none;">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <div class="row d-flex justify-content-center">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#gameSetup" id="pongPlay1v1">1 vs 1</button>
+                </div>
+            </div>
+            <div class="row m-3 d-flex justify-content-center">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-light" id="play4Btn">1v1v1v1</button>
+                </div>
+            </div>
+            <div class="row m-3 d-flex justify-content-center">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-light" id="play1vIABtn">1 vs IA</button>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-auto">
+                    <button type="button" class="btn btn-light" id="playTournamentBtn">Tournois</button>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center m-3">
+                <div class="col-auto text-start">
+                    <button class="btn btn-primary" id="settingsBtn">Paramètres</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Transcendice game menu-->
+    <div class="container-game container-md bg-dark" id="transcendiceGameMenu" style="display: none;">
+        <div class="container-fluid position-absolute top-50 start-50 translate-middle">
+            <div class="row d-flex justify-content-center">
+                <div class="col-auto text-start">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Pong game menu modals-->
+    <div class="modal fade" id="1v1modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <div class="modal-title text-center"></div>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="container-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
