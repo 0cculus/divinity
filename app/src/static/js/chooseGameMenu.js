@@ -51,7 +51,7 @@ export function goBack() {
     disableMenu(diceGameMenu);
     enableMenu(gameChoiceMenu);
     
-    const gameElement = document.getElementById("gameElement");
+    const gameElement = document.getElementById("gameContainer");
     gameElement.style.display = "none";
     backBtn.style.display = "none";
     backBtn.disabled = true;

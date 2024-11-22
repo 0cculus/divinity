@@ -1,9 +1,8 @@
-<!--Game-->
-<div class="container-md container-game bg-dark" id="gameContainer">
-    <div class="container-game" id="gameWindow"></div>
-    <!--Game choice menu-->
-    <div class="container-game container-md bg-dark" id="gameChoiceMenu">
-        <div class="container-fluid position-absolute top-50 start-50 translate-middle">
+    <!--Game-->
+    <div class="container-md container-game bg-dark">
+        <div class="game-window" id="gameContainer" style="display: none;"></div>
+        <!--Game choice menu-->
+        <div class="container-md bg-dark" id="gameChoiceMenu">
             <div class="row justify-content-center position-relative">
                 <div class="col text-end">
                     <button type="button" class="btn color-btn" id="playPongBtn">Jouer à Pong!</button>
@@ -13,14 +12,12 @@
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!--PONG game menu-->
-    <div class="container-md container-game bg-dark" id="pongMenu" style="display: none;">
-        <div class="position-absolute top-50 start-50 translate-middle">
+
+        <!--PONG game menu-->
+        <div class="container-md bg-dark" id="pongMenu" style="display: none;">
             <div class="row d-flex justify-content-center">
                 <div class="col-auto">
-                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#gameSetup" id="pongPlay1v1">1 vs 1</button>
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#gameSettingsModal" id="pongPlay1v1">1 vs 1</button>
                 </div>
             </div>
             <div class="row m-3 d-flex justify-content-center">
@@ -44,32 +41,54 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!--Transcendice game menu-->
-    <div class="container-game container-md bg-dark" id="transcendiceGameMenu" style="display: none;">
-        <div class="container-fluid position-absolute top-50 start-50 translate-middle">
-            <div class="row d-flex justify-content-center">
-                <div class="col-auto text-start">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!--Pong game menu modals-->
-    <div class="modal fade" id="1v1modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <!--Header-->
-                <div class="modal-header">
-                    <div class="modal-title text-center"></div>
-                </div>
-                <!--Body-->
-                <div class="modal-body">
-                    <div class="container-fluid">
+        <!--Transcendice game menu-->
+        <div class="container-game container-md bg-dark" id="transcendiceGameMenu" style="display: none;">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-auto text-start">
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!--Game settings menu modal-->
+        <div class="modal fade" id="gameSettingsModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content background-light">
+                    <!--Header-->
+                    <div class="modal-header background-green">
+                        <div class="container-fluid modal-title text-center"><strong>Paramètres du jeu</strong></div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body background-light d-flex">
+                        {% csrf_token %}
+                        <div class="container-fluid">
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <button>Ajouter un jouer</button>
+                                </div>
+                                <div class="col-6">
+                                    <button>Ajouter un jouer</button>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <button>Ajouter un jouer</button>
+                                </div>
+                                <div class="col-6">
+                                    <button>Ajouter un jouer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Footer-->
+                    <footer class="modal-footer justify-content-center">
+                    </footer>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
     

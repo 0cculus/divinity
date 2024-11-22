@@ -1,6 +1,5 @@
-!fix game behind header (position: relative)
-
-!unpkg not loading ?
+!If "back" button is used during endgame, it does not unload
+!ctrl+ / ctrl- : fucks up game
 
 !handle logout in-game
 
@@ -26,6 +25,7 @@ TODO Profile
 
 
 TODO Menus
+    Modal for game settings
 
 TODO Leaderboard
     Design it

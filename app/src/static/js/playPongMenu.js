@@ -8,37 +8,38 @@ import { initDevRoom } from '../game/devRoom.js'
 
 import { disableMenu } from './chooseGameMenu.js'
 
-const gameContainer = document.getElementById("gameElement");
+const gameContainer = document.getElementById("gameContainer");
 const playPongMenu = document.getElementById("pongMenu");
+const  pongGameSettings = document.getElementById("pongGameSettings")
 
 const gamedata       = new GameData
 const TournamentData = new Tournament
 
-// function setupGameData() {
-    //Here, retrieve players and colors, and setup GameData and Tournament.
-// }
+//Create and display the game settings menu depending on number of players.
+//For each pair of players, create a new row with 6-6, player 1 | player 2
+//Space everything evenly (auto margin ?)
 
-function retrieveData1v1() {
-    
+function createGameSettingsMenu() {
+
+    document.getElementById("gameSettingsMenu").style.display = "block";
 }
 
 export function play1v1Pong() {
 
-    //!Fetch data from user (who is playing ?)
-    gameContainer.style.display = "flex";
     disableMenu(playPongMenu);
-
-    retrieveData1v1();
-
-    gamedata.setCallBack(initMenu);
-    TournamentData.setGame(initGame);
-    //TournamentData.setGame(initDevRoom);
-    TournamentData.setGameData(gamedata);
-    gamedata._keybordMode =  true
-    KeyBordinput();  //> setup keybord
-    Draw();          //* init
-    forceScale();
-    TournamentData.start();
+    
+    createGameSettingsMenu();
+    
+    // gameContainer.style.display = "flex";
+    // gamedata.setCallBack(initMenu);
+    // TournamentData.setGame(initGame);
+    // // TournamentData.setGame(initDevRoom);
+    // TournamentData.setGameData(gamedata);
+    // gamedata._keybordMode =  true
+    // KeyBordinput();  //> setup keybord
+    // Draw();          //* init
+    // forceScale();
+    // TournamentData.start();
     //!Envoyer data DB et update leaderboard
 }
 

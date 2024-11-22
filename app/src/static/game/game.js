@@ -372,9 +372,14 @@ async function Gaming() {
 
 export function forceGameQuit() {
 
-    end = 1
-    newGamedata.setEndGame(null)
-    Draw()
-    forceScale()
-    //DONT send data to backend
+    if (GameLoop == 2)
+        LeaveGame(); //What should I do here ?
+    else {
+
+        end = 1
+        newGamedata.setEndGame(null)
+        Draw()
+        forceScale()
+        //DONT send data to backend
+    }
 }
