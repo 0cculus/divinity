@@ -5,7 +5,7 @@ FILEBEAT_COMPOSE ="extensions/filebeat/filebeat_compose.yml"
 
 all: build start
 
-re: fclean setup build start
+re: fclean build start
 
 monitor:
 	@docker -f $(FILEBEAT_COMPOSE) up
