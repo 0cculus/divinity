@@ -3,42 +3,19 @@
         <div class="game-window" id="gameContainer" style="display: none;"></div>
         <!--Game choice menu-->
         <div class="container-md bg-dark" id="gameChoiceMenu">
-            <div class="row justify-content-center position-relative">
-                <div class="col text-end">
-                    <button type="button" class="btn color-btn" id="playPongBtn">Jouer à Pong!</button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn color-btn" id="playTranscendiceBtn">Jouer à Transcendice!</button>
-                </div>
+            <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn color-btn m-2" id="playPongBtn">Jouer à Pong!</button>
+                <button type="button" class="btn color-btn m-2" id="playTranscendiceBtn">Jouer à Transcendice!</button>        
             </div>
         </div>
 
         <!--PONG game menu-->
         <div class="container-md bg-dark" id="pongMenu" style="display: none;">
-            <div class="row d-flex justify-content-center">
-                <div class="col-auto">
-                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#gameSettingsModal" id="pongPlay1v1">1 vs 1</button>
-                </div>
-            </div>
-            <div class="row m-3 d-flex justify-content-center">
-                <div class="col-auto">
-                    <button type="button" class="btn btn-light" id="play4Btn">1v1v1v1</button>
-                </div>
-            </div>
-            <div class="row m-3 d-flex justify-content-center">
-                <div class="col-auto">
-                    <button type="button" class="btn btn-light" id="play1vIABtn">1 vs IA</button>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-auto">
-                    <button type="button" class="btn btn-light" id="playTournamentBtn">Tournois</button>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-center m-3">
-                <div class="col-auto text-start">
-                    <button class="btn btn-primary" id="settingsBtn">Paramètres</button>
-                </div>
+            <div class="d-flex justify-content-between align-items-center flex-column">
+                <button type="button" class="btn btn-light m-2" data-bs-toggle="modal" data-bs-target="#gameSettingsModal" id="pongPlay1v1">1 vs 1</button>
+                <button type="button" class="btn btn-light m-2" id="play4Btn">1v1v1v1</button>
+                <button type="button" class="btn btn-light m-2" id="play1vIABtn">1 vs IA</button>
+                <button type="button" class="btn btn-light m-2" id="playTournamentBtn">Tournois</button>
             </div>
         </div>
         <!--Transcendice game menu-->
