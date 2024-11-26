@@ -7,10 +7,15 @@
     --accentDarker: rgb(139, 197, 255);
  }
 
-  .color-btn {
-    background-color: var(--accentLighter) !important;
-    border-color: var(--accentColor) !important;
-}
+  .primary-btn {
+        background-color: var(--accentLighter) !important;
+        border-color: var(--accentColor) !important;
+  }
+
+  .primary-btn:hover {
+    background-color: var(--accentDarker) !important;
+    border-color: var(--accentDarker) !important;
+  }
 
   .dropdown-menu { background-color: var(--accentLighter) !important;  }
 
@@ -35,6 +40,7 @@
   .color-accent-light {
     background-color: var(--accentLighter);
   }
+
 /*accent*/
   .color-leaderboard {
     background-color: var(--mainColor);
@@ -45,6 +51,11 @@
     height: 100%;
     aspect-ratio: 1/1;
 }
+
+  #profile-btn:focus {
+    background-color: var(--accentColor);
+    border-color: var(--accentDarker);
+  }
 
   /*Custom containers*/
   .container-game {

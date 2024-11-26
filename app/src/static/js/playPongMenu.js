@@ -19,16 +19,9 @@ const TournamentData = new Tournament
 //For each pair of players, create a new row with 6-6, player 1 | player 2
 //Space everything evenly (auto margin ?)
 
-function createGameSettingsMenu() {
-
-    document.getElementById("gameSettingsMenu").style.display = "block";
-}
-
 export function play1v1Pong() {
 
     disableMenu(playPongMenu);
-    
-    createGameSettingsMenu();
     
     // gameContainer.style.display = "flex";
     // gamedata.setCallBack(initMenu);

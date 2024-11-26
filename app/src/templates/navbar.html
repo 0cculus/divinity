@@ -1,15 +1,15 @@
     {% load static %}
     
         <div class="container-md navbar-container color-navbar position-relative sticky-top border border-solid border-2 border-dark justify-content-end text-end">
-            <button class="btn color-btn" style="display: none;" disabled id="backBtn">Retour</button>
+            <button class="btn primary-btn" style="display: none;" disabled id="backBtn">Retour</button>
             <div id="registerLoginBtnElement">
-                <button type="button" class="btn color-btn d-none d-md-inline" data-bs-toggle="modal"
+                <button type="button" class="btn primary-btn d-none d-md-inline" data-bs-toggle="modal"
                 data-bs-target="#loginModal" id="loginBtn">Connexion</button>
-                <button type="button" class="btn color-btn d-none d-md-inline" data-bs-toggle="modal"
+                <button type="button" class="btn primary-btn d-none d-md-inline" data-bs-toggle="modal"
                 data-bs-target="#registerModal" id="registerBtn">Inscription</button>
                 <!--Dropdown-->
                 <div class="dropdown">
-                    <button class="btn btn-light color-btn dropdown-toggle d-md-none" type="button"
+                    <button class="btn btn-light primary-btn dropdown-toggle d-md-none" type="button"
                         id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">Menu
                     </button>
@@ -21,8 +21,9 @@
             </div>
             <!--Profile-->
             <div class="dropdown container-profile-btn" disabled id="profileElement" style="display: none;">
-                    <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
-                    <button class="btn btn-light btn-profile dropdown-toggle" data-bs-display="static" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
+                <button class="btn color-accent-light dropdown-toggle" data-bs-display="static" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{% static 'images/default_profile.png' %}" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
+                </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                     <li class="dropdown-item-text d-flex justify-content-center">
                         <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="80" height="80" sytle="display: none;">

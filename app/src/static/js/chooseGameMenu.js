@@ -14,7 +14,7 @@ export function disableMenu(menu) {
     
     const menuBtns = menu.querySelectorAll("button");
     
-    menu.style.display = "none"
+    menu.style.display = "none";
     menuBtns.forEach(button => {
         button.disabled = true;
     });
@@ -22,7 +22,6 @@ export function disableMenu(menu) {
 
 const pongMenu = document.getElementById("pongMenu");
 const diceGameMenu = document.getElementById("transcendiceGameMenu");
-const settingsBtn = document.getElementById("settingsBtn");
 
 export function enablePongMenu() {
 
@@ -32,8 +31,6 @@ export function enablePongMenu() {
     backBtn.style.display = "flex";
     backBtn.disabled = false;
 
-    settingsBtn.style.display = "block";
-    settingsBtn.disabled = "false";
 }
 
 export function enableDiceMenu() {
