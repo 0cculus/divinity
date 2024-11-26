@@ -17,7 +17,6 @@ class playerData(models.Model):
 
 
 class history(models.Model):
-    gameID = models.IntegerField()
     playerA = models.CharField(max_length=40, default='')
     pointsA = models.IntegerField(default=0)
     playerB = models.CharField(max_length=40, default='')
