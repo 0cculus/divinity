@@ -11,6 +11,10 @@
         background-color: var(--accentLighter) !important;
         border-color: var(--accentColor) !important;
   }
+  
+  .secondary-btn {
+    background-color: var(--backgroundColor) !important;
+  }
 
   .primary-btn:hover {
     background-color: var(--accentDarker) !important;
@@ -34,11 +38,15 @@
 }
 
   .color-navbar {
-    background-color: var(--mainColor);
+    background-color: var(--mainColor) !important;
 }
 
   .color-accent-light {
     background-color: var(--accentLighter);
+  }
+
+  .color-accent-dark {
+    background-color: var(--accentDarker);
   }
 
 /*accent*/
@@ -51,11 +59,6 @@
     height: 100%;
     aspect-ratio: 1/1;
 }
-
-  #profile-btn:focus {
-    background-color: var(--accentColor);
-    border-color: var(--accentDarker);
-  }
 
   /*Custom containers*/
   .container-game {

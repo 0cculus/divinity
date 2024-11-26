@@ -6,7 +6,7 @@
 TODO Register
     ?Send data to backend
     ?Ask backend if email exists (if it does, prompt user and start again)
-    !click or sumbit ? (eventListeners)
+    Change modal colors
 
 TODO Login
     ?Send data to backend
@@ -14,6 +14,7 @@ TODO Login
     ?Change image and get info(fetch from backend)
     ?42 API (PKCE) - backend
     !click or sumbit ? (eventListeners)
+    Change modal colors
 
 TODO Profile
     Update profile every game end
@@ -22,10 +23,11 @@ TODO Profile
     User lookup
     Customization (ex: picture)
     Handle picture path (think of profile lookup)
+    Change color when modal is active
 
 
 TODO Menus
-    Modal for game settings
+    
 
 TODO Leaderboard
     Design it
@@ -33,9 +35,7 @@ TODO Leaderboard
 
 TODO Game management
     !Allow to play without loggin ? (as guests ?) Otherwise disable play buttons before logged in
-    Fix game going behind header
     Data sent to backend (when and what)
-    Pong modes (set it up)
     Customization (at user identification)
     Tournament design (who plays next)
 
@@ -45,7 +45,6 @@ TODO Game end
     Update Leaderboard
 
 TODO Design
-    Add color to modals
     Make sure contrast is ok.
     Check for accessibility
     Go further with css (transform, transition...)

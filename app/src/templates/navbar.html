@@ -1,166 +1,212 @@
-    {% load static %}
-    
-        <div class="container-md navbar-container color-navbar position-relative sticky-top border border-solid border-2 border-dark justify-content-end text-end">
-            <button class="btn primary-btn" style="display: none;" disabled id="backBtn">Retour</button>
-            <div id="registerLoginBtnElement">
-                <button type="button" class="btn primary-btn d-none d-md-inline" data-bs-toggle="modal"
-                data-bs-target="#loginModal" id="loginBtn">Connexion</button>
-                <button type="button" class="btn primary-btn d-none d-md-inline" data-bs-toggle="modal"
-                data-bs-target="#registerModal" id="registerBtn">Inscription</button>
-                <!--Dropdown-->
-                <div class="dropdown">
-                    <button class="btn btn-light primary-btn dropdown-toggle d-md-none" type="button"
-                        id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Menu
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuBtn">
-                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#registerModal">Inscription</a>
-                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal">Connexion</a>
-                    </div>
-                </div>
+ {% load static %}
+
+<div
+    class="container-md navbar-container color-navbar position-relative sticky-top border border-solid border-2 border-dark justify-content-end text-end">
+    <button class="btn primary-btn" style="display: none;" disabled
+        id="backBtn">Retour</button>
+    <div id="registerLoginBtnElement">
+        <button type="button" class="btn primary-btn d-none d-md-inline"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal" id="loginBtn">Connexion</button>
+        <button type="button" class="btn primary-btn d-none d-md-inline"
+            data-bs-toggle="modal"
+            data-bs-target="#registerModal"
+            id="registerBtn">Inscription</button>
+        <!--Dropdown-->
+        <div class="dropdown">
+            <button class="btn btn-light primary-btn dropdown-toggle d-md-none"
+                type="button"
+                id="dropdownMenuBtn" data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">Menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuBtn">
+                <a class="dropdown-item" data-bs-toggle="modal"
+                    data-bs-target="#registerModal">Inscription</a>
+                <a class="dropdown-item" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Connexion</a>
             </div>
-            <!--Profile-->
-            <div class="dropdown container-profile-btn" disabled id="profileElement" style="display: none;">
-                <button class="btn color-accent-light dropdown-toggle" data-bs-display="static" type="button" id="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{% static 'images/default_profile.png' %}" alt="Default Profile Picture" width="50" height="50" sytle="display: none;">
+        </div>
+    </div>
+    <!--Profile-->
+    <div class="dropdown container-profile-btn" disabled id="profileElement"
+        style="display: none;">
+        <button class="btn color-accent-light dropdown-toggle"
+            data-bs-display="static" type="button" id="profile-btn"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{% static 'images/default_profile.png' %}"
+                alt="Default Profile Picture" width="50" height="50"
+                sytle="display: none;">
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="profileDropdown">
+            <li class="dropdown-item-text d-flex justify-content-center">
+                <img src="{% static 'images/default_profile.png' %}"
+                    class="profile-img" alt="Default Profile Picture" width="80"
+                    height="80" sytle="display: none;">
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="text-center" id="profileUsername"><strong>John
+                    Doe</strong></li>
+            <li><br></li>
+            <li class="text-center" id="profileGamesPlayed">0</li>
+            <li class="text-center">Parties jouées </li>
+            <li class="text-center" id="profileGamesWon">0</li>
+            <li class="text-center">Parties gagnées </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" id="accountParams"
+                    href="#">Paramètres</a></li>
+            <li><a class="dropdown-item" id="accountLogout" href="#">Se
+                    déconnecter</a></li>
+        </ul>
+    </div>
+</div>
+
+<!--Login form-->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <div class="container-fluid modal-title text-center"
+                    id="loginModalTitle"><strong>Connexion</strong></div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close">
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                    <li class="dropdown-item-text d-flex justify-content-center">
-                        <img src="{% static 'images/default_profile.png' %}" class="profile-img" alt="Default Profile Picture" width="80" height="80" sytle="display: none;">
-                    </li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li class="text-center" id="profileUsername"><strong>John Doe</strong></li>
-                    <li><br></li>
-                        <li class="text-center" id="profileGamesPlayed">0</li>
-                        <li class="text-center">Parties jouées </li>
-                        <li class="text-center" id="profileGamesWon">0</li>
-                        <li class="text-center">Parties gagnées </li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" id="accountParams" href="#">Paramètres</a></li>
-                    <li><a class="dropdown-item" id="accountLogout" href="#">Se déconnecter</a></li>
-                </ul>
             </div>
-        </div>
-    
-        <!--Login form-->
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content background-light">
-                    <!--Header-->
-                    <div class="modal-header background-green">
-                        <div class="container-fluid modal-title text-center" id="loginModalTitle"><strong>Connexion</strong></div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        </button>
-                    </div>
-                    <!--Body-->
-                    <div class="modal-body background-light">
-                        {% csrf_token %}
-                        <div class="container-fluid">
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label for="loginEmail" class="form-label">Adresse e-mail</label>
-                                    <input type="email" class="form-control" id="loginEmail" aria-describedby="emailInfo">
-                                    <div id="loginEmailInfo" class="form-text">Votre
-                                        adresse e-mail ne sera
-                                        utilisée que pour vous identifier.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label for="loginPassword" class="form-label">Entrez votre mot de
-                                        passe</label>
-                                        <input type="password" class="form-control" id="loginPassword">
-                                    </div>
-                                </div>
-                                <div id="loginInfo" class="form-text text-center"></div>
-                        </div>
-                        <div class="row m-2">
-                            <div class="col text-center">
-                                <button type="submit" class="btn btn-success" id="loginSubmitBtn">Se connecter</button>
+            <!--Body-->
+            <div class="modal-body">
+                {% csrf_token %}
+                <div class="container-fluid">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="loginEmail" class="form-label">Adresse
+                                e-mail</label>
+                            <input type="email" class="form-control"
+                                id="loginEmail" aria-describedby="emailInfo">
+                            <div id="loginEmailInfo" class="form-text">Votre
+                                adresse e-mail ne sera
+                                utilisée que pour vous identifier.
                             </div>
                         </div>
                     </div>
-                    <!--Footer-->
-                    <footer class="modal-footer justify-content-center">
-                        <div class="row m-2">
-                            <div class="col justify-content-start">
-                                <div class="btn-group" role="group" aria-label="42 API connect">
-                                    <button class="btn btn-outline-secondary" disabled>
-                                        <img src="{% static 'images/42_logo.png' %}" height="70" width="70" alt="42_logo">
-                                    </button>
-                                    <button class="btn btn-outline-secondary">Se connecter avec 42 API</button>
-                                </div>
-                            </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="loginPassword" class="form-label">Entrez
+                                votre mot de
+                                passe</label>
+                            <input type="password" class="form-control"
+                                id="loginPassword">
                         </div>
-                    </footer>
+                    </div>
+                    <div id="loginInfo" class="form-text text-center"></div>
+                </div>
+                <div class="row m-2">
+                    <div class="col text-center">
+                        <button type="submit" class="btn"
+                            id="loginSubmitBtn">Se connecter</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    
-    <!--Register form-->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content background-green">
-                <!--Header-->
-                <div class="modal-header background-green">
-                    <div class="modal-title text-center" id="registerModalTitle">Inscription</div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-                <!--Body-->
-                <div class="modal-body background-light" id="registerModalBody">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="registerEmail" class="form-label">Adresse e-mail</label>
-                        <input type="email" class="form-control" id="registerEmail"
-                            aria-describedby="registerEmailInfo">
-                        <div id="registerEmailInfo" class="form-text">Votre
-                            adresse e-mail ne sera
-                            utilisée que pour vous identifier.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="registerPassword" class="form-label">Choisissez un mot de
-                            passe</label>
-                        <input type="password" class="form-control" id="registerPassword"
-                            aria-describedby="passwordInfo">
-                        <div id="passwordInfo" class="form-text">Doit
-                            contenir entre 8 et 30 caractères,
-                            dont 1 lettre majuscule, 1 chiffre et 1
-                            caractère spécial.
+            <!--Footer-->
+            <footer class="modal-footer justify-content-center">
+                <div class="row m-2">
+                    <div class="col justify-content-start">
+                        <div class="btn-group" role="group"
+                            aria-label="42 API connect">
+                            <button class="btn btn-outline-secondary" disabled>
+                                <img src="{% static 'images/42_logo.png' %}"
+                                    height="70" width="70" alt="42_logo">
+                            </button>
+                            <button class="btn btn-outline-secondary">Se
+                                connecter avec 42 API</button>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="passwordConfirm" class="form-label">Confirmez le mot de
-                            passe</label>
-                        <input type="password" class="form-control" id="passwordConfirm">
-                        <div id="passwordConfirmInfo" class="form-text"></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<!--Register form-->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content background-green">
+            <!--Header-->
+            <div class="modal-header background-green">
+                <div class="modal-title text-center"
+                    id="registerModalTitle">Inscription</div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close">
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body background-light" id="registerModalBody">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="registerEmail" class="form-label">Adresse
+                        e-mail</label>
+                    <input type="email" class="form-control" id="registerEmail"
+                        aria-describedby="registerEmailInfo">
+                    <div id="registerEmailInfo" class="form-text">Votre
+                        adresse e-mail ne sera
+                        utilisée que pour vous identifier.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="registerPassword" class="form-label">Choisissez
+                        un mot de
+                        passe</label>
+                    <input type="password" class="form-control"
+                        id="registerPassword"
+                        aria-describedby="passwordInfo">
+                    <div id="passwordInfo" class="form-text">Doit
+                        contenir entre 8 et 30 caractères,
+                        dont 1 lettre majuscule, 1 chiffre et 1
+                        caractère spécial.
                     </div>
                 </div>
-                <!--Footer-->
-                <footer class="modal-footer justify-content-center">
-                    <button type="submit" class="btn btn-success" id="registerSubmitBtn">S'inscrire</button>
-                </footer>
+                <div class="mb-3">
+                    <label for="passwordConfirm" class="form-label">Confirmez le
+                        mot de
+                        passe</label>
+                    <input type="password" class="form-control"
+                        id="passwordConfirm">
+                    <div id="passwordConfirmInfo" class="form-text"></div>
+                </div>
+            </div>
+            <!--Footer-->
+            <footer class="modal-footer justify-content-center">
+                <button type="submit" class="btn btn-success"
+                    id="registerSubmitBtn">S'inscrire</button>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid position-absolute">
+    <div id="emailConfirmationAlert" class="alert alert-success" role="alert"
+        style="display: none;">
+        <div class="row d-flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="currentColor"
+                class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+        </div>
+        <div class="row d-flex">
+            <div class="col text-center">
+                Un lien de confirmation a été envoyé à votre adresse e-mail !
+                Veuillez cliquer sur le lien puis poursuivre avec "Connexion".
+            </div>
+            <div class="col-auto justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                    aria-label="Close">
+                </button>
             </div>
         </div>
     </div>
-    
-    <div class="container-fluid position-absolute">
-        <div id="emailConfirmationAlert" class="alert alert-success" role="alert" style="display: none;">
-            <div class="row d-flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                </svg>
-            </div>
-            <div class="row d-flex">
-                <div class="col text-center">
-                    Un lien de confirmation a été envoyé à votre adresse e-mail !
-                    Veuillez cliquer sur le lien puis poursuivre avec "Connexion".
-                </div>
-                <div class="col-auto justify-content-end">
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
