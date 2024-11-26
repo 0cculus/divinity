@@ -134,7 +134,13 @@
 	}
 
 
+	const minVal = 1
+	const maxVal = 6
+	var currentCursor = 0
+
 	var dices = new Array(6)
+	var diceValues = new Array(6)
+
 	for (let i = 0; i < 6; i++)
 	{
 		dices[i] = new Box({
@@ -149,10 +155,41 @@
 			}
 		})
 		dices[i].castShadow = true
+		dices[i].receiveShadow = true
 		scene.add(dices[i])
+		
+		diceValues[i] = Math.floor(Math.random() * (maxVal - minVal) + minVal)
+	}
+	console.log(diceValues)
 
-		//dices[i].cursor = 'pointer'
-		//dices[i].on('click', function(event) { console.log("Dice: " + i) })
+	const cursor = new Box({
+		width: 0.3,
+		height: 0.3,
+		depth: 0.3,
+		color: '#000',
+		position: {
+			x: -5,
+			y: 0.5,
+			z: 0
+		}
+	})
+	cursor.castShadow = true
+	scene.add(cursor)
+	
+	function moveCursor(direction)
+	{
+		if (currentCursor < 0)
+		{
+			currentCursor = 5
+			cursor.position.set(5, cursor.position.y, cursor.position.z)
+		}
+		else if (currentCursor > 5)
+		{
+			currentCursor = 0
+			cursor.position.set(-5, cursor.position.y, cursor.position.z)
+		}
+		else
+			cursor.position.set(cursor.position.x + direction, cursor.position.y, cursor.position.z)
 	}
 
 	const ground = new Box({
@@ -180,57 +217,29 @@
 
 	camera.position.z = 5
 
-	const keys = {
-		a: {
-			pressed: false
-		},
-		d: {
-			pressed: false
-		},
-		s: {
-			pressed: false
-		},
-		w: {
-			pressed: false
-		}
-	}
-
-	/*window.addEventListener('keydown', (event) => {
+	window.addEventListener('keydown', (event) => {
 		switch (event.code) {
+			case 'ArrowLeft':
 			case 'KeyA':
-				keys.a.pressed = true
+				currentCursor--;
+				moveCursor(-2)
+				console.log("move cursor left")
 				break
+			case 'ArrowRight':
 			case 'KeyD':
-				keys.d.pressed = true
-				break
-			case 'KeyS':
-				keys.s.pressed = true
-				break
-			case 'KeyW':
-				keys.w.pressed = true
+				currentCursor++;
+				moveCursor(2)
+				console.log("move cursor right")
 				break
 			case 'Space':
-				.velocity.y = 0.2
+				console.log("select die: ", currentCursor)
+				console.log("selected value: ", diceValues[currentCursor])
+				break
+			case 'Enter':
+				console.log("end turn")
 				break
 		}
 	})
-
-	window.addEventListener('keyup', (event) => {
-		switch (event.code) {
-			case 'KeyA':
-				keys.a.pressed = false
-				break
-			case 'KeyD':
-				keys.d.pressed = false
-				break
-			case 'KeyS':
-				keys.s.pressed = false
-				break
-			case 'KeyW':
-				keys.w.pressed = false
-				break
-		}
-	})*/
 
 	const enemies = []
 
