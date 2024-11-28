@@ -25,7 +25,7 @@ function newPlayerRow(numberPlayers) {
     const newCol = document.createElement("div");
     const newRow = document.createElement("div");
     
-    newRow.classList.add("row");
+    newRow.classList.add("row", "d-flex", "justify-content-evenly", "flex-column");
     newCol.classList.add("col")
     
     for (let i = 0; i < numberPlayers; i++) {
@@ -34,7 +34,7 @@ function newPlayerRow(numberPlayers) {
         const newBtn = document.createElement("button");
 
         newBtn.innerHTML = "Ajouter un joueur";
-        newBtn.classList.add("btn", "primary-btn");
+        newBtn.classList.add("btn", "primary-btn"); //toggle a modal
         
         newPlayer.appendChild(newBtn);
         newPlayer.classList.add("d-flex", "player-container");
@@ -60,7 +60,4 @@ export function displayGameSettings(numberPlayers) {
         numberPlayers -= 2;
     }
 }
-//create game settings menu
-
-
 //Collect user input
