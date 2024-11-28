@@ -1,6 +1,11 @@
 DOING:
+Handle elements more coherently
+    (
+        logout -> destroy game data, hide game element, hide menus, hide Leaderboard, destroy token
+        return -> destroy game data, hide game element, hide game menus
+        game end -> update Leaderboard, update profile, destroy game data, hide game element
+    )
 Cleanup files
-Change game settings modal
 
 !If "back" button is used during endgame, it does not unload
 !ctrl+ / ctrl- : fucks up game
