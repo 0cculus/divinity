@@ -33,6 +33,10 @@
     color: var(--accentDarker);
 }
 
+  .color-accent {
+    background-color: var(--accentColor);
+  }
+
   .color-background {
       background-color: var(--backgroundColor);
 }
@@ -121,9 +125,12 @@
     border: 2px solid white;
   }
 
- #gameSettingsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+ .player-container {
+    margin: 10px;
+    justify-content: center;
     align-items: center;
+    background-color: var(--accentLighter) !important;
+    border-color: var(--accentDarker) !important ;
+    min-width: 100px;
+    min-height: 100px;
  }

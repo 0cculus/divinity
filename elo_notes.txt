@@ -1,3 +1,5 @@
+DOING: 
+
 !If "back" button is used during endgame, it does not unload
 !ctrl+ / ctrl- : fucks up game
 

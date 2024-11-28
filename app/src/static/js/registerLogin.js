@@ -1,4 +1,5 @@
 import { validateRegister, validateLogin } from "./credentialsValidate.js";
+import { enableMenu, disableMenu } from "./chooseGameMenu.js"
 
 class loggedInUser {
 
@@ -68,6 +69,14 @@ function updateProfile() {
     gamesWonElement.innerHTML = loggedUser.getWins();
 }
 
+const notLoggedMessage = document.getElementById("notLoggedMessage");
+const gameChoiceBtns = document.getElementById("gameChoiceBtns");
+
+const loginBtn = document.getElementById('loginBtn');
+const registerBtn = document.getElementById("registerBtn");
+const dropdownMenuBtn = document.getElementById("dropdownMenuBtn");
+const registerLoginBtnElement = document.getElementById("registerLoginBtnElement");
+
 export async function loginUser(event) {
     
     event.preventDefault();
@@ -91,13 +100,9 @@ export async function loginUser(event) {
             modalInstance.hide();
             document.getElementById("profileElement").style.display = 'flex';
 
-            const loginBtn = document.getElementById('loginBtn');
-            const registerBtn = document.getElementById("registerBtn");
-            const dropdownMenuBtn = document.getElementById("dropdownMenuBtn");
-
-            const registerLoginBtnElement = document.getElementById("registerLoginBtnElement");
-
             registerLoginBtnElement.style.display = "none";
+            notLoggedMessage.style.display = "none";
+            enableMenu(gameChoiceBtns)
 
             registerBtn.disabled = true;     
             loginBtn.disabled = true;
@@ -115,17 +120,13 @@ export function logoutUser() {
     //delete access token
     document.getElementById("profileElement").style.display = 'none';
 
-    const loginBtn = document.getElementById('loginBtn');
-    const registerBtn = document.getElementById("registerBtn");
-    const dropdownMenuBtn = document.getElementById("dropdownMenuBtn");
-
-    const registerLoginBtnElement = document.getElementById("registerLoginBtnElement");
-
     registerLoginBtnElement.style.display = "block";
 
-    registerBtn.disabled = false;     
+    registerBtn.disabled = false;
     loginBtn.disabled = false;
     dropdownMenuBtn.disabled = false;
+    disableMenu(gameChoiceBtns);
+    notLoggedMessage.style.display = "block";
 }
 
 export default loggedUser;

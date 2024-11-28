@@ -4,8 +4,15 @@
         <!--Game choice menu-->
         <div class="container-md bg-dark" id="gameChoiceMenu">
             <div class="d-flex justify-content-center align-items-center">
-                <button type="button" class="btn primary-btn m-2" id="playPongBtn">Jouer à Pong!</button>
-                <button type="button" class="btn primary-btn m-2" id="playTranscendiceBtn">Jouer à Transcendice!</button>        
+                <div class="row">
+                    <div class="col color-accent text-center p-3 rounded border border-light" id="notLoggedMessage">
+                        Connectez-vous pour jouer
+                    </div>
+                    <div class="col" style="display: none;" id="gameChoiceBtns">
+                        <button type="button" class="btn primary-btn m-2" disabled="true" id="playPongBtn">Jouer à Pong!</button>
+                        <button type="button" class="btn primary-btn m-2" disabled="true" id="playTranscendiceBtn">Jouer à Transcendice!</button>   
+                    </div>
+                </div>     
             </div>
         </div>
 
@@ -36,9 +43,8 @@
                     <div class="modal-body color-background rounded">
                         {% csrf_token %}
                         <div class="d-flex justify-content-around align-items-center">
-                            <button class="btn m-2 primary-btn">Ajouter un jouer</button>
-                            VS
-                            <button class="btn m-2 primary-btn">Ajouter un jouer</button>
+                            <button class="btn primary-btn">Ajouter un jouer</button>
+                            <button class="btn primary-btn">Ajouter un jouer</button>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import { forceGameQuit } from "../game/game.js"
 
-function enableMenu(menu) {
+export function enableMenu(menu) {
     
     const menuBtns = menu.querySelectorAll("button");
     
