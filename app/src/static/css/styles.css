@@ -127,10 +127,18 @@
 
  .player-container {
     margin: 10px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--accentLighter) !important;
-    border-color: var(--accentDarker) !important ;
     min-width: 100px;
     min-height: 100px;
+ }
+
+ #gameSettingsContainer {
+    border-radius: 25%;
+    border-color: var(--mainColor);
+    border-width: 10px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
  }

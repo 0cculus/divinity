@@ -1,6 +1,6 @@
 import { loginUser, registerUser, logoutUser } from "./registerLogin.js";
 import {enablePongMenu, enableDiceMenu, goBack } from "./chooseGameMenu.js";
-import { play1v1Pong } from "./playPongMenu.js";
+import { playPong } from "./playPongMenu.js";
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -27,9 +27,17 @@ document.addEventListener("DOMContentLoaded", function() {
     backBtn.addEventListener("click", goBack);
     
     //PONG menu
-    const play1v1Btn = document.getElementById("pongPlay1v1");
+    const play1v1Pong = document.getElementById("pongPlay1v1");
+    const play4v4Pong = document.getElementById("pongPlay4");
+    const playVAIPong = document.getElementById("pongPlayVAI");
+    const playTournamentPong = document.getElementById("pongPlayTournament");
     
-    play1v1Btn.addEventListener("click", play1v1Pong);
+    play1v1Pong.addEventListener("click", playPong);
+    play4v4Pong.addEventListener("click", playPong);
+    playVAIPong.addEventListener("click", playPong);
+
+    //playTournamentPong.addEventListener("click", playPong("T")); - requires exception
+
     
     //Transcendice menu
 });

@@ -6,44 +6,36 @@ import { Tournament } from '../game/tournament.js'
 import { initGame } from '../game/game.js'
 import { initDevRoom } from '../game/devRoom.js'
 
-import { disableMenu } from './chooseGameMenu.js'
+import { disableMenu, displayGameSettings, enableMenu } from './menusUtils.js'
 
 const gameContainer = document.getElementById("gameContainer");
 const playPongMenu = document.getElementById("pongMenu");
-const  pongGameSettings = document.getElementById("pongGameSettings")
+const  gameSettings = document.getElementById("gameSettingsContainer")
 
 const gamedata       = new GameData
 const TournamentData = new Tournament
 
-//Create and display the game settings menu depending on number of players.
-//For each pair of players, create a new row with 6-6, player 1 | player 2
-//Space everything evenly (auto margin ?)
+//playPong function will handle menus visibility and draw the game settings menu with a variable number of players depending on the game mode
 
-export function play1v1Pong() {
+export function playPong(event) {
+
+    const gameMode = event.currentTarget.id;
+
+    console.log("DEBUG: " + gameMode);
+    //reset game data
+    if (gameMode == "pongPlay1v1")
+        displayGameSettings(2);
+    if (gameMode == "pongPlay4")
+        displayGameSettings(4);
+    if (gameMode == 'pongPlayVAI')
+        displayGameSettings(1);
 
     disableMenu(playPongMenu);
-    
-    // gameContainer.style.display = "flex";
-    // gamedata.setCallBack(initMenu);
-    // TournamentData.setGame(initGame);
-    // // TournamentData.setGame(initDevRoom);
-    // TournamentData.setGameData(gamedata);
-    // gamedata._keybordMode =  true
-    // KeyBordinput();  //> setup keybord
-    // Draw();          //* init
-    // forceScale();
-    // TournamentData.start();
-    //!Envoyer data DB et update leaderboard
-}
+    enableMenu(gameSettings);
 
-export function play4v4Pong() {
-
-}
-
-export function playAIPong() {
-
-}
-
-export function playTournamentPong() {
-
+    //setup user input collecting
+    //enable game settings menu
+    //Send data to backend when game is finished
+    //Wait for game end signal. Send game data to backend
+    //exit endgame button
 }

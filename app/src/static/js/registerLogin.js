@@ -1,5 +1,5 @@
 import { validateRegister, validateLogin } from "./credentialsValidate.js";
-import { enableMenu, disableMenu } from "./chooseGameMenu.js"
+import { enableMenu, disableMenu } from "./menusUtils.js"
 
 class loggedInUser {
 
@@ -84,7 +84,8 @@ export async function loginUser(event) {
     const userPassword = document.getElementById("loginPassword").value;
     const userEmail = document.getElementById("loginEmail").value;
 
-    if (validateLogin(userEmail, userPassword) == true) {
+    if(1) { //DEBUG
+    //if (validateLogin(userEmail, userPassword) == true) {
 
         if (1 /*backend com */) {
 

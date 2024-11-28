@@ -1,4 +1,6 @@
-DOING: 
+DOING:
+Cleanup files
+Change game settings modal
 
 !If "back" button is used during endgame, it does not unload
 !ctrl+ / ctrl- : fucks up game

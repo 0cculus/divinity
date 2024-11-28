@@ -19,36 +19,23 @@
         <!--PONG game menu-->
         <div class="container-md bg-dark" id="pongMenu" style="display: none;">
             <div class="d-flex justify-content-between align-items-center flex-column">
-                <button type="button" class="btn primary-btn m-2" data-bs-toggle="modal" data-bs-target="#gameSettingsModal" id="pongPlay1v1">1 vs 1</button>
-                <button type="button" class="btn primary-btn m-2" id="play4Btn">1v1v1v1</button>
-                <button type="button" class="btn primary-btn m-2" id="play1vIABtn">1 vs IA</button>
-                <button type="button" class="btn primary-btn m-2" id="playTournamentBtn">Tournois</button>
+                <button type="button" class="btn primary-btn m-2" id="pongPlay1v1">1 vs 1</button>
+                <button type="button" class="btn primary-btn m-2" id="pongPlay4">1v1v1v1</button>
+                <button type="button" class="btn primary-btn m-2" id="pongPlayVAI">1 vs IA</button>
+                <button type="button" class="btn primary-btn m-2" id="pongPlayTournament">Tournois</button>
             </div>
         </div>
         <!--Transcendice game menu-->
         <div class="container-game container-md bg-dark" id="transcendiceGameMenu" style="display: none;">
         </div>
         
-        <!--Game settings menu modal-->
-        <div class="modal fade" id="gameSettingsModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content background-light">
-                    <!--Header-->
-                    <div class="modal-header color-navbar">
-                        <div class="container-fluid modal-title text-center"><strong>Paramètres du jeu</strong></div>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        </button>
-                    </div>
-                    <!--Body-->
-                    <div class="modal-body color-background rounded">
-                        {% csrf_token %}
-                        <div class="d-flex justify-content-around align-items-center">
-                            <button class="btn primary-btn">Ajouter un jouer</button>
-                            <button class="btn primary-btn">Ajouter un jouer</button>
-                        </div>
-                    </div>
-                </div>
+        <!--Game settings menu-->
+        <div class="gameSettingsContainer color-accent" style="display: none;" id="gameSettingsContainer" tabindex="-1" aria-hidden="true">
+            <div class="container-fluid text-center m-2"><strong>Paramètres de la partie</strong></div>
+
+            <div class="d-flex justify-content-around align-items-center" id="gameSettingsDiv">
             </div>
+        
         </div>
 
     </div>

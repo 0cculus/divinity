@@ -1,24 +1,5 @@
 import { forceGameQuit } from "../game/game.js"
-
-export function enableMenu(menu) {
-    
-    const menuBtns = menu.querySelectorAll("button");
-    
-    menuBtns.forEach(button => {
-        button.disabled = false;
-    });
-    menu.style.display = "block";
-} 
-
-export function disableMenu(menu) {
-    
-    const menuBtns = menu.querySelectorAll("button");
-    
-    menu.style.display = "none";
-    menuBtns.forEach(button => {
-        button.disabled = true;
-    });
-}
+import { enableMenu, disableMenu } from "./menusUtils.js";
 
 const pongMenu = document.getElementById("pongMenu");
 const diceGameMenu = document.getElementById("transcendiceGameMenu");
@@ -54,4 +35,5 @@ export function goBack() {
     backBtn.disabled = true;
 
     forceGameQuit();
+    //reset game data
 }
