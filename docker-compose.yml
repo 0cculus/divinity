@@ -130,19 +130,19 @@ services:
 
     # Run as 'root' instead of 'filebeat' (uid 1000) to allow reading
     # 'docker.sock' and the host's filesystem.
-  filebeat:
-    build:
-      context: monitor/extensions/filebeat/
-      args:
-        ELASTIC_VERSION: ${ELASTIC_VERSION}
-    user: root
-    command:
+#  filebeat:
+#    build:
+#      context: monitor/extensions/filebeat/
+#      args:
+#        ELASTIC_VERSION: ${ELASTIC_VERSION}
+#    user: root
+#    command:
       # Log to stderr.
-      - -e
+#      - -e
       # Disable config file permissions checks. Allows mounting
       # 'config/filebeat.yml' even if it's not owned by root.
       # see: https://www.elastic.co/guide/en/beats/libbeat/current/config-file-permissions.html
-      - --strict.perms=false
+#      - --strict.perms=false
     volumes:
       - ./monitor/extensions/filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro,Z
       - type: bind
@@ -153,13 +153,13 @@ services:
         source: /var/run/docker.sock
         target: /var/run/docker.sock
         read_only: true
-    environment:
-      FILEBEAT_INTERNAL_PASSWORD: ${FILEBEAT_INTERNAL_PASSWORD:-}
-      BEATS_SYSTEM_PASSWORD: ${BEATS_SYSTEM_PASSWORD:-}
-    networks:
-      - transcend
-    depends_on:
-      - elasticsearch
+#    environment:
+#      FILEBEAT_INTERNAL_PASSWORD: ${FILEBEAT_INTERNAL_PASSWORD:-}
+#      BEATS_SYSTEM_PASSWORD: ${BEATS_SYSTEM_PASSWORD:-}
+#  networks:
+#    - transcend
+#  depends_on:
+#    - elasticsearch
 
 networks:
   transcend:

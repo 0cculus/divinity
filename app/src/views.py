@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 import json
 from .utils import addMatch_History
+from .models import history
 
 def index(request):
     return (render(request, 'index.html'))
@@ -24,3 +25,7 @@ def history_splitter(request):
         return JsonResponse({'status': 'success', 'message': 'The match was added to the database'}, status=204)
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
+    
+
+#def show_history(request):
+    
