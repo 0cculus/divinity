@@ -15,9 +15,9 @@ const minVal = 1
 const maxVal = 6
 const nbDice = 6
 
-/* ------------------------------- */
-// WIP CHANGE TO 2 USERS PLAYSTYLE //
-/* ------------------------------- */
+/* ----------------------------------- */
+// WIP ADD END CONDITION & TIE BREAKER //
+/* ----------------------------------- */
 
 function save(id)
 {

@@ -141,24 +141,28 @@
 	var dices = new Array(6)
 	var diceValues = new Array(6)
 
-	for (let i = 0; i < 6; i++)
+
+	function init()
 	{
-		dices[i] = new Box({
-			width: 1,
-			height: 1,
-			depth: 1,
-			color: "#7a02e3",
-			position: {
-				x: -5 + (2 * i),
-				y: 20,
-				z: 0
-			}
-		})
-		dices[i].castShadow = true
-		dices[i].receiveShadow = true
-		scene.add(dices[i])
+		for (let i = 0; i < 6; i++)
+		{
+			dices[i] = new Box({
+				width: 1,
+				height: 1,
+				depth: 1,
+				color: "#7a02e3",
+				position: {
+					x: -5 + (2 * i),
+					y: 20,
+					z: 0
+				}
+			})
+			dices[i].castShadow = true
+			dices[i].receiveShadow = true
+			scene.add(dices[i])
 		
-		diceValues[i] = Math.floor(Math.random() * (maxVal - minVal) + minVal)
+			diceValues[i] = Math.floor(Math.random() * (maxVal - minVal) + minVal)
+		}
 	}
 	console.log(diceValues)
 
@@ -190,6 +194,18 @@
 		}
 		else
 			cursor.position.set(cursor.position.x + direction, cursor.position.y, cursor.position.z)
+	}
+
+	function reserveDice()
+	{
+		dices[currentCursor].position.set(dices[currentCursor].position.x, dices[currentCursor].position.y, dices[currentCursor].position.z - 2) 
+	}
+
+	function clearDices()
+	{
+		for (var i = 0; i < maxVal; i++)
+			dices[i].kill()
+		init()
 	}
 
 	const ground = new Box({
@@ -234,8 +250,10 @@
 			case 'Space':
 				console.log("select die: ", currentCursor)
 				console.log("selected value: ", diceValues[currentCursor])
+				reserveDice()
 				break
 			case 'Enter':
+				clearDices()
 				console.log("end turn")
 				break
 		}
@@ -263,6 +281,7 @@
 		// cube.rotation.x += 0.01
 		// cube.rotation.y += 0.01
 	}
+	init()
 	animate()
 </script>
 
