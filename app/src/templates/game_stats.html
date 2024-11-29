@@ -1,0 +1,14 @@
+{% load static %}
+
+<!--Game stats (Leaderboard).-->
+<div class="container-sm">This is gonna be the leaderboard !</div>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+	crossorigin="anonymous"></script>
+<div id="content"></div>
+<script type="module" src="{% static 'js/gamba.js' %}"></script>
+<script type="module" src="{% static 'js/userGamba.js' %}"></script>
+<script src="{% static 'js/inputValidation.js' %}"></script>
+</body>
+</html>

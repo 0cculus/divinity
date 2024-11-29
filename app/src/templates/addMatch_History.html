@@ -1,0 +1,13 @@
+<h2>Pèse en d'sous si tu veux du peup' dans l'hystorik</h2>
+<form id="addHistoric" method="post" action="{% url 'history_splitter' %}">
+    {% csrf_token %}
+    <script>
+        var xsrfCookie = postman.getResponseCookie("csrftoken");
+        postman.setEnvironmentVariable('csrftoken', xsrfCookie.value);
+    </script>
+    <input type="hidden" id="nameA" name="nameA" value="Paul">
+    <input type="hidden" id="nameB" name="nameB" value="Alain">
+    <input type="hidden" id="scoreA" name="scoreA" value=5>
+    <input type="hidden" id="scoreB" name="scoreB" value=6>
+    <button type="submit">Anvouéd'jé</button>
+</form>
