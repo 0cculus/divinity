@@ -4,7 +4,7 @@
 \connect transcend;
 
 CREATE TABLE IF NOT EXISTS auth (
-		playerID INT DEFAULT 0,
+		playerMail VARCHAR(255) DEFAULT 0,
 		pass VARCHAR(30) DEFAULT '');
 CREATE TABLE IF NOT EXISTS players (
 		playerID INT DEFAULT 0,
@@ -22,4 +22,5 @@ CREATE TABLE IF NOT EXISTS history(
 		pointsA INT DEFAULT 0,
 		playerB VARCHAR(40) DEFAULT '',
 		pointsB INT DEFAULT 0,
-		winner BOOLEAN DEFAULT FALSE);
+		winner BOOLEAN DEFAULT FALSE,
+		gameDate TIMESTAMP);
