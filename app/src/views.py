@@ -2,14 +2,13 @@ from django.http import JsonResponse
 from django.shortcuts import render
 import json
 from .utils import addMatch_History
-from .models import history
+from .models import history, playerData
 
 def index(request):
-    return (render(request, 'index.html'))
+    matchs = history.objects.all()
+    print(f"Voici les matchs trouves {matchs}")
+    return (render(request, 'index.html', {'matchs': matchs}))
 
-#from django.views.decorators.csrf import csrf_exempt
-
-#@csrf_exempt
 def history_splitter(request):
     print("Je suis dans history splitter")
     if request.method == 'POST':
@@ -25,7 +24,3 @@ def history_splitter(request):
         return JsonResponse({'status': 'success', 'message': 'The match was added to the database'}, status=204)
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request'}, status=400)
-    
-
-#def show_history(request):
-    

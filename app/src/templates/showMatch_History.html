@@ -1,0 +1,13 @@
+<h2> Voici les matchs qui ont eu lieux<br></h2>
+
+{% block content %}
+<p>Je suis dans le block content<br></p>
+{% for match in matchs %}
+    <div>
+        <p>Voici le match <strong>{{ match.playerA }} {{ match.pointsA }} | {{ match.playerB }} {{ match.pointsB }}</strong><br></p>
+    </div>
+{% endfor %}
+
+<!--{{ matchs }} -->
+
+{% endblock  %}
