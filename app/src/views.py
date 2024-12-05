@@ -19,7 +19,7 @@ def history_splitter(request):
         strScoreB = str(request.POST.get('scoreB'))
         scoreA = int(strScoreA)
         scoreB = int(strScoreB)
-        print(f"Received: {nameA} vs {nameB} | Scores: {scoreA} - {scoreB}")
+#        print(f"Received: {nameA} vs {nameB} | Scores: {scoreA} - {scoreB}")
         addMatch_History(nameA, nameB, scoreA, scoreB)
         return JsonResponse({'status': 'success', 'message': 'The match was added to the database'}, status=204)
     else:

@@ -1,12 +1,13 @@
 from django.db import models
+from django.utils.timezone import localtime
+from django.utils import timezone
 
 class cred(models.Model):
-    playerID = models.IntegerField()
-    password = models.CharField(max_length=50)
+    playerMail = models.EmailField(max_length=255, unique=True, serialize=True, default='')
+    password = models.CharField(max_length=50, serialize=True)
 
 class playerData(models.Model):
-    playerID = models.IntegerField()
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, max_length=255, default='')
     name = models.CharField(max_length=40)
     gamesWon = models.IntegerField(default=0)
     gamesLost = models.IntegerField(default=0)
@@ -15,6 +16,16 @@ class playerData(models.Model):
     isRegistered = models.BooleanField(default=False)
     isLogged = models.BooleanField(default=False)
 
+    def updatePostGame(self, pointsA = int, pointsB = int):
+        if (pointsA > pointsB):
+            self.gamesWon += 1
+        elif (pointsA < pointsB):
+            self.gamesLost += 1
+
+    def updatePostTourney(self, won = bool):
+        if (won == True):
+            self.numTourneyWins += 1
+        self.numTournament += 1
 
 class history(models.Model):
     playerA = models.CharField(max_length=40, default='')
@@ -22,6 +33,7 @@ class history(models.Model):
     playerB = models.CharField(max_length=40, default='')
     pointsB = models.IntegerField(default=0)
     winner = models.BooleanField(default=False)
+    gameDate = models.DateTimeField(default=timezone.localtime(timezone.now()))
 
 #CREATE TABLE IF NOT EXISTS auth (
 #		playerID INT DEFAULT 0,
