@@ -21,13 +21,13 @@ const nbDice = 6
 
 function save(id)
 {
-	let index = Number(id.replace("availDie", ""))
+	//let index = Number(id.replace("availDie", ""))
 	if (currentLimbo < 6 && tabDiceAvail[index] != 0)
 	{
 		tabLimbo[currentLimbo] = tabDiceAvail[index]
 		tabDiceAvail[index] = 0
-		document.getElementById("limboDie" + currentLimbo).value = tabLimbo[currentLimbo]
-		document.getElementById(id).value = ""
+		//document.getElementById("limboDie" + currentLimbo).value = tabLimbo[currentLimbo]
+		//document.getElementById(id).value = ""
 		currentLimbo++
 	}
 }
@@ -40,8 +40,8 @@ function cacheSaved()
 		tabDiceSaved[currentSaved] = tabLimbo[i]
 		tabLimbo[i] = 0
 		currentScore.push(tabDiceSaved[currentSaved])
-		document.getElementById("savedDie" + currentSaved).value = tabDiceSaved[currentSaved]
-		document.getElementById("limboDie" + i).value = ""
+		//document.getElementById("savedDie" + currentSaved).value = tabDiceSaved[currentSaved]
+		//document.getElementById("limboDie" + i).value = ""
 		currentSaved++
 	}
 	tabScore.push(currentScore)
@@ -53,7 +53,7 @@ function rerollDice()
 {
 	for (var i = 0; i < tabDiceAvail.length; i++)
 	{
-		document.getElementById("availDie" + i).value = ""
+		//document.getElementById("availDie" + i).value = ""
 		tabDiceAvail[i] = 0
 	}
 	if (currentSaved < nbDice)
@@ -61,7 +61,7 @@ function rerollDice()
 		for (var i = 0; i < nbDice - currentSaved; i++)
 		{
 			tabDiceAvail[i] = Math.floor(Math.random() * (maxVal -minVal) + minVal)
-			document.getElementById("availDie" + i).value = tabDiceAvail[i]
+			//document.getElementById("availDie" + i).value = tabDiceAvail[i]
 		}
 	}
 	else
@@ -69,7 +69,7 @@ function rerollDice()
 		for (var i = 0; i < tabDiceAvail.length; i++)
 		{
 			tabDiceAvail[i] = Math.floor(Math.random() * (maxVal -minVal) + minVal)
-			document.getElementById("availDie" + i).value = tabDiceAvail[i]
+			//document.getElementById("availDie" + i).value = tabDiceAvail[i]
 		}
 	}
 }
@@ -78,9 +78,9 @@ function clear()
 {
 	for (var i = 0; i < nbDice; i++)
 	{
-		document.getElementById("availDie" + i).value = ""
-		document.getElementById("savedDie" + i).value = ""
-		document.getElementById("limboDie" + i).value = ""
+		//document.getElementById("availDie" + i).value = ""
+		//document.getElementById("savedDie" + i).value = ""
+		//document.getElementById("limboDie" + i).value = ""
 		tabDiceAvail[i] = 0
 		tabDiceSaved[i] = 0
 		tabLimbo[i] = 0
@@ -165,7 +165,7 @@ function init()
 {
 	const contentElement = document.getElementById("content")
 
-	contentElement.innerHTML = `<div id="avail">
+	/*contentElement.innerHTML = `<div id="avail">
 </div>
 <div id="limbo">
 </div>
@@ -218,7 +218,7 @@ function init()
 	saveDice.addEventListener("click", function() {
 		cacheSaved()
 	})
-	document.getElementById("controls").appendChild(saveDice)
+	document.getElementById("controls").appendChild(saveDice)*/
 
 	playerCount = 0
 	tabPlayer[0] = new Player("Cathan")
