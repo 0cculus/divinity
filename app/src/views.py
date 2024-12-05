@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-import json
+from django.views.decorators.cache import cache_page
+from django.views.decorators.csrf import csrf_protect
 from .utils import addMatch_History
 from .models import history, playerData
 
@@ -9,6 +10,7 @@ def index(request):
     print(f"Voici les matchs trouves {matchs}")
     return (render(request, 'index.html', {'matchs': matchs}))
 
+@csrf_protect
 def history_splitter(request):
     print("Je suis dans history splitter")
     if request.method == 'POST':
