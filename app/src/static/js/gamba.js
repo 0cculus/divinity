@@ -39,7 +39,7 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 document.getElementById("content").appendChild(renderer.domElement)
 
 const controls = new OrbitControls(camera, renderer.domElement)
-controls.enabled = false
+controls.enabled = true
 
 const cursor = new Box({
 	width: 0.3,
@@ -82,7 +82,7 @@ camera.position.z = 5
 // WIP ADD END CONDITION & TIE BREAKER //
 /* ----------------------------------- */
 
-function save(id)
+function reserveDice(id)
 {
 	if (currentLimbo < 6 && tabDiceAvail[currentCursor] != 0)
 	{
@@ -103,10 +103,8 @@ function clearDices()
 	for (var i = 0; i < nbDice; i++)
 	{
 		tabDiceAvail[i] = 0
-		tabDiceSaved[i] = 0
 		tabLimbo[i] = 0
 	}
-	currentSaved = 0
 	currentLimbo = 0
 }
 
@@ -131,6 +129,7 @@ function rerollDice()
 	{
 		tabDiceAvail[i] = 0
 	}
+	clearDices()
 	for (var i = 0; i < nbDice - currentSaved; i++)
 	{
 		tabDiceAvail[i] = Math.floor(Math.random() * (maxVal -minVal) + minVal)
@@ -138,10 +137,10 @@ function rerollDice()
 			width: 1,
 			height: 1,
 			depth: 1,
-			color: "#7a02e3",
+			color: "#fff",
 			position: {
 				x: -5 + (2 * i),
-				e: 20,
+				y: 20,
 				z: 0
 			}
 		})
@@ -151,6 +150,14 @@ function rerollDice()
 		scene.add(dices[i])
 	}
 	console.log(tabDiceAvail)
+}
+
+function clearAll()
+{
+	for (var i = 0; i < tabDiceSaved.length; i++)
+		tabDiceSaved[i] = 0
+	currentSaved = 0
+	clearDices()
 }
 
 function countStreak(base, amount)
@@ -209,7 +216,7 @@ function count(arr)
 function score()
 {
 	if (currentLimbo == 0)
-		clearDices()
+		clearAll()
 	else if (currentSaved != 0 || currentLimbo != 0)
 	{
 		tabLimbo.sort()
@@ -221,7 +228,7 @@ function score()
 	tabScore = []
 	playerCount++
 	currentPlayer = tabPlayer[playerCount % 2]
-	clearDices()
+	clearAll()
 	rerollDice()
 }
 
@@ -247,26 +254,23 @@ window.addEventListener('keydown', (event) => {
 		case 'KeyA':
 			currentCursor--;
 			moveCursor(-2)
-			console.log("move cursor left")
 			break
 		case 'ArrowRight':
 		case 'KeyD':
 			currentCursor++;
 			moveCursor(2)
-			console.log("move cursor right")
 			break
 		case 'KeyR':
-			console.log("reroll")
-			rerollDice()
+			cacheSaved()
 			break
 		case 'Space':
 			console.log("select die: ", currentCursor)
 			console.log("selected value: ", tabDiceAvail[currentCursor])
-			save()
+			reserveDice()
 			break
 		case 'Enter':
-			score()
 			console.log("end turn")
+			score()
 			break
 	}
 })
@@ -275,7 +279,6 @@ function init()
 {
 	const contentElement = document.getElementById("content")
 	
-	console.log("radar")
 	for (var i = 0; i < nbDice; i++)
 	{
 		tabDiceAvail[i] = Math.floor(Math.random() * (maxVal -minVal) + minVal)
@@ -283,10 +286,10 @@ function init()
 			width: 1,
 			height: 1,
 			depth: 1,
-			color: "#7a02e3",
+			color: "#fff",
 			position: {
 				x: -5 + (2 * i),
-				e: 20,
+				y: 10,
 				z: 0
 			}
 		})
