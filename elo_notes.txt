@@ -1,4 +1,6 @@
 DOING:
+
+Use ID tokens ?
 Make visuals when a player is added
     Make a structure to fill when players are added
         //Made the structure of the element in advance, make an array with player info, fetch all inputs in element, then use array to fill it

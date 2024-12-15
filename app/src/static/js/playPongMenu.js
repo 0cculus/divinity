@@ -64,8 +64,6 @@ export function playPong(event) {
     disableMenu(playPongMenu);
     enableMenu(gameSettings);
 
-    //setup user input collecting
-    //enable game settings menu
     //Send data to backend when game is finished
     //Wait for game end signal. Send game data to backend
     //exit endgame button (return to menu)
