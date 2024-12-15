@@ -1,7 +1,7 @@
 import { validateRegister, validateLogin } from "./credentialsValidate.js";
 import { enableMenu, disableMenu } from "./menusUtils.js"
 
-class loggedInUser {
+export class loggedInUser {
 
     constructor(username, gamesPlayed, gamesWon) {
         this.username = username;

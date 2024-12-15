@@ -25,6 +25,7 @@
                 <button type="button" class="btn primary-btn m-2" id="pongPlayTournament">Tournois</button>
             </div>
         </div>
+
         <!--Transcendice game menu-->
         <div class="container-game container-md bg-dark" id="transcendiceGameMenu" style="display: none;">
         </div>
@@ -33,10 +34,59 @@
         <div class="gameSettingsContainer color-accent" style="display: none;" id="gameSettingsContainer" tabindex="-1" aria-hidden="true">
             <div class="container-fluid text-center m-2"><strong>Paramètres de la partie</strong></div>
 
-            <div class="d-flex justify-content-around align-items-center" id="gameSettingsDiv">
-            </div>
-        
+            <div class="d-flex justify-content-around align-items-center" id="gameSettingsDiv"></div>
         </div>
+
+        <!-- Add user to game modal -->
+        <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <div class="container-fluid modal-title text-center"
+                        id="loginModalTitle"><strong>Informations du joueur</strong></div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    {% csrf_token %}
+                    <div class="container-fluid flex-column justify-content-around">
+                        <div>
+                            <form class="form-inline">
+                                <div class="form-group mb-2">
+                                  <label for="addUserEmail">Email</label>
+                                  <input type="email" class="form-control" id="addUserEmail" value="email@example.com">
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2">
+                                  <label for="addUserPassword">Mot de passe</label>
+                                  <input type="password" class="form-control" id="addUserPassword" placeholder="Mot de passe">
+                                </div>
+                                <button>S'identifier avec credentials</button>
+                            </form>
+                        </div>
+                        <div>
+                            <form class="form-inline">
+                                <div class="form-group mb-2">
+                                  <label for="addUserUsername">Choisir un nom de joueur</label>
+                                  <input type="text" class="form-control" id="addUserUsername" value="Surnom">
+                                </div>
+                                <button>Jouer en tant que Guest</button>
+                            </form>
+                        </div>
+                        <div>
+                            <button>S'identifier avec API42</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Footer-->
+                <footer class="modal-footer justify-content-center">
+                </footer>
+            </div>
+        </div>
+    </div>
 
     </div>
     

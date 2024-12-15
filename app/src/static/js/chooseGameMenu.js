@@ -4,6 +4,7 @@ import { enableMenu, disableMenu } from "./menusUtils.js";
 const pongMenu = document.getElementById("pongMenu");
 const diceGameMenu = document.getElementById("transcendiceGameMenu");
 
+
 export function enablePongMenu() {
 
     disableMenu(gameChoiceMenu);
@@ -37,3 +38,5 @@ export function goBack() {
     forceGameQuit();
     //reset game data
 }
+
+default export 

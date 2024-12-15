@@ -18,6 +18,23 @@ export function disableMenu(menu) {
     });
 }
 
+function createPlayerInfo() {
+    
+
+}
+
+function createPlayerBtn() {
+
+    const newBtn = document.createElement("button");
+
+    newBtn.innerHTML = "Ajouter un joueur";
+    newBtn.classList.add("btn", "primary-btn");
+    newBtn.setAttribute("data-bs-toggle", "modal");
+    newBtn.setAttribute("data-bs-target", "addUserModal");
+
+    return newBtn;
+}
+
 function newPlayerRow(numberPlayers) {
 
     const gameSettingsDiv = document.getElementById("gameSettingsDiv");
@@ -31,12 +48,10 @@ function newPlayerRow(numberPlayers) {
     for (let i = 0; i < numberPlayers; i++) {
 
         const newPlayer = document.createElement("div");
-        const newBtn = document.createElement("button");
-
-        newBtn.innerHTML = "Ajouter un joueur";
-        newBtn.classList.add("btn", "primary-btn"); //toggle a modal
+        //
         
-        newPlayer.appendChild(newBtn);
+        newPlayer.appendChild(createPlayerBtn());
+        newPlayer.appendChild(createPlayerInfo());
         newPlayer.classList.add("d-flex", "player-container");
         
         newCol.appendChild(newPlayer);
@@ -46,18 +61,16 @@ function newPlayerRow(numberPlayers) {
     gameSettingsDiv.appendChild(newRow);
 }
         
-export function displayGameSettings(numberPlayers) {
+export function setupGameSettings(numberPlayers) {
 
     if (numberPlayers == 1) {
         
         newPlayerRow(1);
         numberPlayers = 0;
     }
-    while (numberPlayers != 0) {
+    while (numberPlayers > 0) {
         
-        console.log(numberPlayers);
         newPlayerRow(2);
         numberPlayers -= 2;
     }
 }
-//Collect user input

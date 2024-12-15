@@ -1,4 +1,14 @@
 DOING:
+Make visuals when a player is added
+    Make a structure to fill when players are added
+        //Made the structure of the element in advance, make an array with player info, fetch all inputs in element, then use array to fill it
+    Once the button to add the player is clicked, update the parent of the button, 
+        displaying information of last player added in the structure (use it for player # too)
+
+        event.currentTarget
+        node.parentElement
+Adding users to games should work, but it needs to be tested
+
 Handle elements more coherently
     (
         logout -> destroy game data, hide game element, hide menus, hide Leaderboard, destroy token
