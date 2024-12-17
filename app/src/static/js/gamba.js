@@ -2,6 +2,7 @@ import { Player } from './userGamba.js'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { Box } from '../game/box.js'
+import { Text } from '../game/text.js'
 
 var tabDiceAvail = Array(6)
 var tabDiceSaved = Array(6)
@@ -103,20 +104,27 @@ function reserveDice()
 	}
 }
 
-function verifyPlayableRoll()
+function checkLessThanThree(currentTab)
 {
 	var tabCheck = [2, 3, 4, 6]
 	var tabCount = [0, 0, 0, 0]
-	var lessThanThree = 0
 
 	for (var i = 0; i < tabCheck.length; i++)
 	{
-		for (var j = 0; j < tabDiceAvail.length; j++)
+		for (var j = 0; j < currentTab.length; j++)
 		{
-			if (tabCheck[i] == tabDiceAvail[j])
+			if (tabCheck[i] == currentTab[j])
 				tabCount[i]++
 		}
 	}
+	return (tabCount)
+}
+
+function verifyPlayableRoll()
+{
+	var lessThanThree = 0
+	var tabCount = checkLessThanThree(tabDiceAvail)
+
 	for (var i = 0; i < tabCount.length; i++)
 	{
 		if (tabCount[i] < 3)
@@ -124,6 +132,18 @@ function verifyPlayableRoll()
 	}
 	if (lessThanThree == 3)
 		tabDiceAvail[Math.floor(Math.random() * (maxVal - minVal))] = 5
+}
+
+function verifyNotStreakSaved()
+{
+	var tabCount = checkLessThanThree(tabLimbo)
+	
+	for (var i = 0; i < tabCount.length; i++)
+	{
+		if (tabCount[i] < 3)
+			return true
+	}
+	return false
 }
 
 function clearDices()
@@ -145,6 +165,8 @@ function cacheSaved()
 {
 	var currentScore = Array()
 	if (currentLimbo == 0)
+		score()
+	else if (verifyNotStreakSaved())
 		score()
 	else
 	{
