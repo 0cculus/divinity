@@ -23,14 +23,13 @@ var finalRoll = false
 const minVal = 1
 const maxVal = 6
 const nbDice = 6
+var textPlayer1 = null
+var textPlayer2 = null
+var highlighterCurrentPlayer = null
 
 /* ------------------------------------------ */
 // WIP ADD TEXTURES + TEXT FOR NAMES & SCORES //
 /* ------------------------------------------ */
-
-/* ------------------------------------------------- */
-// WIP ADD CONDITION CHECK FOR SINGLE DIGIT IN LIMBO //
-/* ------------------------------------------------- */
 
 /* ---------------------------------------------- */
 // WIP REMOVE EVENT LISTENERS AFTER WIN CONDITION //
@@ -92,6 +91,9 @@ scene.add(light)
 scene.add(new THREE.AmbientLight(0xffffff, 0.5))
 
 camera.position.z = 5
+
+
+
 
 function reserveDice()
 {
@@ -323,7 +325,6 @@ function moveCursor(direction)
 		cursor.position.set(cursor.position.x + direction, cursor.position.y, cursor.position.z)
 }
 
-window.addEventListener('keydown', gameControls)
 
 function gameControls(event)
 {
@@ -372,6 +373,7 @@ function checkEnd()
 function init()
 {
 	const contentElement = document.getElementById("content")
+	window.addEventListener('keydown', gameControls)
 	
 	for (var i = 0; i < nbDice; i++)
 	{
@@ -398,6 +400,26 @@ function init()
 	tabPlayer[1] = new Player("Felix")
 	currentPlayer = tabPlayer[playerCount % 2]
 	console.log(currentPlayer)
+	textPlayer1 = new Text(scene, {
+		size: 0.3,
+		position: {
+			x: -5,
+			y: 1,
+			z: 0
+		},
+	}, text: String(tabPlayer[0].name + ": " + tabPlayer[0].score))
+	textPlayer2 = new Text(scene, {
+		size: 0.3,
+		position: {
+			x: 5,
+			y: 1,
+			z: 0
+		},
+	}, String(tabPlayer[1].name + ": " + tabPlayer[1].score))
+
+	highlighterCurrentPlayer = new Box({
+	})
+
 }
 
 function animate() {
