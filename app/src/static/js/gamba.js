@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { Box } from '../game/box.js'
 import { Text } from '../game/text.js'
 
+var tabTextPlayer = Array(2)
 var tabDiceAvail = Array(6)
 var tabDiceSaved = Array(6)
 var tabPlayer = Array(2)
@@ -23,8 +24,6 @@ var finalRoll = false
 const minVal = 1
 const maxVal = 6
 const nbDice = 6
-var textPlayer1 = null
-var textPlayer2 = null
 var highlighterCurrentPlayer = null
 
 /* ------------------------------------------ */
@@ -299,6 +298,7 @@ function score()
 			currentPlayer.setScore(currentPlayer.getScore() + Number(count(tabScore[i])))
 		currentPlayer.setScore(currentPlayer.getScore() + Number(count(tabLimbo)))
 	}
+	tabTextPlayer[playerCount % 2].updateTxt(String(tabPlayer[playerCount % 2].name + ": " + tabPlayer[playerCount % 2].score))
 	checkEnd()
 	tabScore = []
 	playerCount++
@@ -400,22 +400,8 @@ function init()
 	tabPlayer[1] = new Player("Felix")
 	currentPlayer = tabPlayer[playerCount % 2]
 	console.log(currentPlayer)
-	textPlayer1 = new Text(scene, {
-		size: 0.3,
-		position: {
-			x: -5,
-			y: 1,
-			z: 0
-		},
-	}, text: String(tabPlayer[0].name + ": " + tabPlayer[0].score))
-	textPlayer2 = new Text(scene, {
-		size: 0.3,
-		position: {
-			x: 5,
-			y: 1,
-			z: 0
-		},
-	}, String(tabPlayer[1].name + ": " + tabPlayer[1].score))
+	tabTextPlayer[0] = new Text(scene, { x: -5, y: 2, z: 0 }, String(tabPlayer[0].name + ": " + tabPlayer[0].score), "#fff", "static/fonts/OpenSans_Regular.json")
+	tabTextPlayer[1] = new Text(scene, { x: 5, y: 2, z: 0 }, String(tabPlayer[1].name + ": " + tabPlayer[1].score), "#fff", "static/fonts/OpenSans_Regular.json")
 
 	highlighterCurrentPlayer = new Box({
 	})
