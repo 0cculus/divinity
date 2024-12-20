@@ -26,9 +26,9 @@ const maxVal = 6
 const nbDice = 6
 var highlighterCurrentPlayer = null
 
-/* ------------------------------------------ */
-// WIP ADD TEXTURES + TEXT FOR NAMES & SCORES //
-/* ------------------------------------------ */
+/* ---------------------- */
+// WIP ADD DICES TEXTURES //
+/* ---------------------- */
 
 /* ---------------------------------------------- */
 // WIP REMOVE EVENT LISTENERS AFTER WIN CONDITION //
@@ -90,9 +90,6 @@ scene.add(light)
 scene.add(new THREE.AmbientLight(0xffffff, 0.5))
 
 camera.position.z = 5
-
-
-
 
 function reserveDice()
 {
@@ -303,6 +300,7 @@ function score()
 	tabScore = []
 	playerCount++
 	currentPlayer = tabPlayer[playerCount % 2]
+	highlighterCurrentPlayer.position.set(tabTextPlayer[playerCount % 2].position.x, highlighterCurrentPlayer.position.y, highlighterCurrentPlayer.position.z)
 	console.log(currentPlayer)
 	clearAll()
 	if (!gameEnd)
@@ -404,8 +402,17 @@ function init()
 	tabTextPlayer[1] = new Text(scene, { x: 5, y: 2, z: 0 }, String(tabPlayer[1].name + ": " + tabPlayer[1].score), "#fff", "static/fonts/OpenSans_Regular.json")
 
 	highlighterCurrentPlayer = new Box({
+		width: 2.5,
+		height: 0.1,
+		depth: 0.1,
+		color: "#c22100",
+		position: {
+			x: tabTextPlayer[playerCount % 2].position.x,
+			y: 1.8,
+			z: 0
+		}
 	})
-
+	scene.add(highlighterCurrentPlayer)
 }
 
 function animate() {
