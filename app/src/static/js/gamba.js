@@ -368,10 +368,19 @@ function checkEnd()
 	}
 }
 
+
 function init()
 {
 	const contentElement = document.getElementById("content")
 	window.addEventListener('keydown', gameControls)
+	const textMenu = ```	Use Space to select a die to reserve
+	Use R key to reroll the dice
+	Use Enter to end the turn
+	Reserving a Dice 1 gives 100 points
+	Reserving a Dice 5 gives 50 points
+	Streaks of 3 gives dice * 100
+	Streaks of 4 gives dice * 200
+	Careful! If you end turn or reroll without selecting any point dice or streaks you will get no points and the turn will be given to the opponent!```
 	
 	for (var i = 0; i < nbDice; i++)
 	{
