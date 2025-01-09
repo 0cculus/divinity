@@ -378,12 +378,12 @@ function endGame()
 	const msgEnd = currentPlayer.name + " won!"
 }
 
-function allowKeyStrokes()
+function allowKeyEvents()
 {
 	window.addEventListener('keydown', gameControls)
 }
 
-function removeKeyStrokes()
+function removeKeyEvents()
 {
 	window.removeEventListener('keydown', gameControls)
 }
@@ -439,6 +439,7 @@ function init()
 		}
 	})
 	scene.add(highlighterCurrentPlayer)
+	animate()
 }
 
 function animate() {
@@ -450,7 +451,6 @@ function animate() {
 	{
 		dices[i].velocity.x = 0
 		dices[i].velocity.z = 0
-
 		dices[i].update(ground)
 	}
 
@@ -458,4 +458,3 @@ function animate() {
 }
 
 init()
-animate()
